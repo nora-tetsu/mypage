@@ -1,0 +1,134 @@
+/* スマートフォンには適用しない */
+@media screen and (min-width: 768px) {
+    /* 各要素を非表示 */
+    .grid li.relation-label.empty-links, /* 空リンクのラベル */
+    .grid li.page-list-item.empty, /* 空リンク */
+    .grid li.relation-label a .icon-lg, /* 「Links」のアイコン */
+    .grid li.relation-label .arrow, /* ラベルの右しっぽ */
+    .related-page-list .grid li.page-list-item a .description, /* ページの概要 */
+    .related-page-list .grid li.page-list-item a .icon /* サムネイル */ {
+        display: none; 
+    }
+    
+    /* 関連ページを左ペイン化 */
+    .related-page-list {
+        position: fixed;
+        left: 10px;
+        margin: -30px 20px 0 3vw; /* -30pxの部分はプロジェクトタイトルの位置に応じて変えてください */
+        padding: 0 10px 0 20px;
+        width: 18vw;
+        /* 関連リンク一覧部分を独立してスクロール */
+        height: 86vh;
+        overflow-y: auto;
+        z-index: 20; /* エディタ部分と領域が重なる可能性があるのでエディタより上層に設定 */
+    }
+    .drag-and-drop-enter {
+        position: absolute;
+        left: calc(20vw + 30px);
+        width: calc(55vw + 60px);
+        margin-top: -30px;
+        padding-left: 40px; /* 行番号表示が隠れないように設定 */
+    }
+    .related-page-list .grid {
+        width: 100%;
+    }
+    .related-page-list .grid li {
+        width: 100%;
+        margin: 2px;
+        height: auto !important;
+    }
+    .related-page-list .grid li a {
+        background: unset;
+        border: unset;
+        box-shadow: unset !important;
+    }
+    .related-page-list .grid li a .header {
+        padding: 0;
+    }
+    .related-page-list .grid li.page-list-item a {
+        background-color: var(--card-bg, #fff); /* 定義されているテーマでなければ白を設定 */
+    }
+    .related-page-list .grid li.page-list-item a .title {
+        font-size: 12px; /* ページタイトルを小さめに表示 */
+    }
+    .related-page-list .grid li.relation-label {
+        width: 100%;
+        min-height: 33px;
+        border: #444 solid 1px;
+    }
+    .related-page-list .grid li.relation-label .title {
+        display: block;
+        font-size: 12px; /* ラベルタイトルを小さめに表示 */
+    }
+    .related-page-list .grid li.relation-label.headword a {
+        display: block;
+        background-color: #888; /* ラベルの色 プロジェクトテーマに合わせて変えてください */
+    }
+    .related-page-list .grid li.relation-label.links {
+        min-height: unset;
+        height: auto;
+    }
+    .related-page-list .grid li.relation-label.links a {
+        display: block;
+        cursor: default; /* クリックしても何も起こらないのにデフォルトのカーソルがリンク用になっているのが気になったため */
+        background: unset; /* 「Links」のラベルの色 好きな色に設定してください */
+        margin: auto;
+        color: #444;
+    }
+    
+    /* 「・・・」部分の調整 */
+    .grid li.ellipsis a {
+        display: block;
+        text-align: right;
+        height: 36px;
+    }
+    .grid li.ellipsis a .circle {
+        border-radius: 0;
+        height: 20px;
+        width: 40px;
+    }
+    
+    /* 関連ページ要素のカウント */
+    /* ラベルをナンバリング */
+    .related-page-list {
+        counter-reset: label;
+    }
+    .related-page-list .grid li.relation-label.headword {
+        counter-increment: label;
+    }
+    .related-page-list .grid li.relation-label.headword::before {
+        content: counter(label);
+        position: absolute; 
+        display: block; 
+        left: 0px;
+        z-index: 10; 
+        text-align: right;
+        font-size: 12px;
+        color: #fff; /* テーマに合わせて変えてください */
+    }
+    
+    /* 各ラベルごとにページをナンバリング */
+    .related-page-list .grid {
+        counter-reset: item;
+    }
+    .related-page-list .grid li.page-list-item {
+        counter-increment: item;
+    }
+    .related-page-list .grid li.page-list-item::before {
+        content: counter(item);
+        position: absolute; 
+        display: block; 
+        left: -32px;
+        z-index: 10; 
+        min-width: 30px;
+        text-align: right;
+        font-size: 12px;
+        color: #bbb;
+    }
+    
+    /* ページメニューを固定 */
+    .col-page-side .page-menu {
+        position: fixed;
+        top: 100px;
+    }
+}

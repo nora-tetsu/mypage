@@ -184,6 +184,7 @@ iframe.twitter-tweet-button:not([src*="=https%3A%2F%2Fnoratetsu.blogspot.com%2F2
 .columns-inner {
   display: -ms-grid;
   display: grid;
+  gap: 30px 0;
   margin: 0 auto;
   padding: 0;
 }
@@ -234,7 +235,7 @@ iframe.twitter-tweet-button:not([src*="=https%3A%2F%2Fnoratetsu.blogspot.com%2F2
     -ms-grid-column-span: 1;
     grid-column: 2 / 3;
     -ms-grid-row: 1;
-    -ms-grid-row-span: 9;
+    -ms-grid-row-span: 29;
     grid-row: 1 / 30;
   }
   .column-left-outer {

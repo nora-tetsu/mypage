@@ -116,6 +116,11 @@ header .Header .description {
   max-width: 100%;
   height: auto;
 }
+@media screen and (max-width: 767px) {
+  .post-body img {
+    max-width: 80%;
+  }
+}
 .post-labels a,
 .cloud-label-widget-content a {
   background-color: #eee;
@@ -229,8 +234,8 @@ iframe.twitter-tweet-button:not([src*="=https%3A%2F%2Fnoratetsu.blogspot.com%2F2
     -ms-grid-column-span: 1;
     grid-column: 2 / 3;
     -ms-grid-row: 1;
-    -ms-grid-row-span: 4;
-    grid-row: 1 / 5;
+    -ms-grid-row-span: 9;
+    grid-row: 1 / 30;
   }
   .column-left-outer {
     -ms-grid-column: 1;
@@ -245,8 +250,8 @@ iframe.twitter-tweet-button:not([src*="=https%3A%2F%2Fnoratetsu.blogspot.com%2F2
     -ms-grid-column-span: 1;
     grid-column: 1 / 2;
     -ms-grid-row: 2;
-    -ms-grid-row-span: 3;
-    grid-row: 2 / 5;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / 3;
   }
 }
 @media screen and (max-width: 767px) {

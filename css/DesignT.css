@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css?family=Kosugi+Maru|M+PLUS+Rounded+1c");
+@import url("https://use.fontawesome.com/releases/v5.15.1/css/all.css");
+
+/* カスタム */
+@media screen and (min-width: 1261px) {
+    :root {--margin-side: calc(50vw - 592px);}
+ }
+@media screen and (min-width: 992px) and (max-width: 1260px) {
+    :root {--margin-side: 38px;}
+ }
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    :root {--margin-side: 23px;}
+ }
+@media screen and (max-width: 767px) {
+    :root {--margin-side: 8px;}
+ }
+
+/* footer, */
+.navbar,
+.fauxcolumn-outer,
+#blog-pager {
+    display: none !important;
+}
+
+.Header .description, 
+.tabs-inner .widget li a, 
+.main-outer,
+h2.date-header, 
+h3.post-title, .comments h4,
+div.widget > h2, div.widget h2.title, 
+input {
+    font-family: "UD デジタル 教科書体 NK-R", "Kosugi Maru", 
+        "Roboto",Helvetica,Arial,"Hiragino Sans",sans-serif !important;
+}
+.Header h1 {
+    font: normal normal 40px Gruppo !important;
+}
+
+.Header .description, 
+.tabs-inner .widget li a, 
+.main-outer,
+div.widget > h2, div.widget h2.title {
+    font-size: 110%;
+}
+
+body {
+    min-width: unset;
+    padding: 0 var(--margin-side) !important;
+}
+
+/* .content, .columns-inner, */
+.content-outer, .content-fauxcolumn-outer, .region-inner {
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%;
+}
+
+header {
+    margin-left: 20px;
+}
+.Header h1 {
+    text-shadow: 2px 2px 2px gray;
+}
+.Header .description {
+    font-size: 14px;
+}
+img#Image1_img {
+    max-height: 100px;
+    width: auto;
+}
+
+.tabs-inner .widget ul {
+    margin: 0;
+}
+
+.tabs-inner .section:first-child ul {    
+    margin: 0 auto;
+}
+
+.section {
+    margin: unset;
+}
+
+.comments h4 {
+    font-size: 16px;
+}
+
+.tabs .widget li a[href^="https://noratetsu.blogspot.com/"] {
+    font-weight: bold;
+}
+.tabs .widget li a:is(
+    [href^="https://twilog.org/Foam_Crab/"],
+    [href^="https://noratetsu.blogspot.com/"],
+    [href^="https://note.com/"],
+    [href="https://twitter.com/Foam_Crab"],
+    [href="https://scrapbox.io/noratetsu/"]
+)::before {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: -3px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 2px;
+}
+.tabs .widget li a[href^="https://twilog.org/Foam_Crab/"]::before {
+    content: '';
+    background: url(http://www.google.com/s2/favicons?domain=https://twilog.org/Foam_Crab/asc);
+}
+/* .tabs .widget li a[href^="https://noratetsu.blogspot.com/"]::before {
+    content: '';
+    background: url(http://www.google.com/s2/favicons?domain=https://www.blogger.com/);
+} */
+.tabs .widget li a[href="https://note.com/noratetsu"]::before {
+    content: '';
+    background: url(http://www.google.com/s2/favicons?domain=https://note.com/);
+}
+.tabs .widget li a[href="https://twitter.com/Foam_Crab"]::before {
+    content: '';
+    background: url(http://www.google.com/s2/favicons?domain=https://twitter.com/);
+}
+.tabs .widget li a[href="https://scrapbox.io/noratetsu/"]::before {
+    content: '';
+    background: url(http://www.google.com/s2/favicons?domain=https://scrapbox.io/);
+}
+
+.post-footer {
+    background-color: #fff;
+}
+.post-body a:not(:hover) {
+    text-decoration:underline;
+    color: rgb(0,137,159);
+}
+.post-body a[target="_blank"]::after {
+    font-family: 'Font Awesome 5 Free' !important;
+    content: '\f360';
+    font-weight: 900;
+    font-size: 0.5rem;
+    padding-left: 2px;
+    padding-right: 4px;
+    display: inline-block;
+}
+.post-labels a,
+.cloud-label-widget-content a {
+    background-color: #eee;
+    border-radius: 10px;
+    padding: 1px 3px;
+}
+.post-labels a:hover,
+.cloud-label-widget-content a:hover {
+    text-decoration: none;
+    color: unset;
+}
+.post-labels a::before,
+.cloud-label-widget-content a::before {
+    font-family: 'Font Awesome 5 Free' !important;
+    content: '\f02b';
+    font-weight: 900;
+    font-size: 0.5rem;
+    padding-left: 2px;
+    padding-right: 1px;
+    display: inline-block;
+}
+
+iframe.twitter-tweet-button:not([src*="=https%3A%2F%2Fnoratetsu.blogspot.com%2F20"]) {
+    display: none;
+}
+
+.status-msg-wrap {
+    margin-bottom: 20px;
+}
+.status-msg-body a[href$=".blogspot.com/"],
+.status-msg-hidden a[href$=".blogspot.com/"] {
+    display: none;
+}
+.status-msg-body b {
+    color: rgb(0,40,156);
+}
+.status-msg-border {
+    border: unset;
+    opacity: 0.2;
+}
+
+
+.columns-inner {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 0;
+}
+.column-center-outer, .column-left-outer, .column-right-outer {
+    float: unset !important;
+    display: block;
+    width: unset !important;
+}
+.column-center-outer {
+    order: 2;
+    flex-basis: 60%;
+}
+.column-left-outer {
+    order: 1;
+    flex-basis: 20%;
+}
+.column-right-outer {
+    order: 3;
+    flex-basis: 20%;
+}
+.main-inner .columns,
+.main-inner .fauxcolumn-left-outer,
+.main-inner .column-left-outer,
+.main-inner .fauxcolumn-right-outer,
+.main-inner .column-right-outer{
+    width:  unset;
+    min-width:  unset;
+    padding: unset !important;
+    margin: unset !important;
+    right: unset;
+    left: unset;
+}
+
+
+@media screen and (max-width: 767px) {
+    .content-inner {
+        padding: 10px 0;
+    }
+    .header-inner .Header .titlewrapper {
+        padding: 10px 0;
+    }
+    .columns-inner {
+        flex-wrap: wrap;
+    }
+    .column-center-outer,
+    .column-left-outer,
+    .column-right-outer {
+        flex-basis: 100%;
+        /* border-bottom: 1px dotted gray; */
+    }
+    .column-center-outer {
+        order: 1;
+    }
+    .column-left-outer {
+        order: 2;
+    }
+    .column-right-outer {
+        order: 3;
+    }
+    .column-left-inner,
+    .column-right-inner {
+        padding: 15px !important;
+    }
+    aside h2 {
+        background-color: #bbbbbb;
+        color: #fff !important;
+        padding: 2px;
+    }
+}

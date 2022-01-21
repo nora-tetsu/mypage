@@ -112,6 +112,10 @@ header .Header .description {
   padding-right: 4px;
   display: inline-block;
 }
+.post-body img {
+  max-width: 100%;
+  height: auto;
+}
 .post-labels a,
 .cloud-label-widget-content a {
   background-color: #eee;

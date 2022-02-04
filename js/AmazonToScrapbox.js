@@ -51,7 +51,7 @@
   		var ct = at.replace(/\(.+\)/,'').replace(/ /g,'');
   		pub.push(pu + ' [' + ct + ']');
   	}
-  	var lines='['+imageurl+' '+window.location.href+']\n'  + pub.join(' ') + '\n' + pubdata[1] +  pubdata[2] + a + '\n>' + d1 + '\n[#書籍]\n[＊]\n';//ページへの書き込み内容。ここで順番を変えればページ内容も変わります。
+  	var lines='['+imageurl+' '+window.location.href+']\n'  + pub.join(' ') + '\n' + pubdata[1] +  pubdata[2] + a + '\n>' + d1 + '\n[#書籍]\n[＊]\n[@]\n';//ページへの書き込み内容。ここで順番を変えればページ内容も変わります。
     var body = encodeURIComponent(lines);
     window.open('https://scrapbox.io/noratetsuobj/'+encodeURIComponent(title.trim())+'?body='+body)
  })();

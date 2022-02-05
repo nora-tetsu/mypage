@@ -43,7 +43,7 @@ javascript:(function(){
   }
 
   // 以上の情報を、実際に書き込みたい形に整えてひとつの文字列にまとめる
-  var lines = '['+imageurl+' '+window.location.href+']\n'  + authors.join(' ') + sub + '\n\n知った経緯\n \n' + select + '\n[#書籍]\n[＊]\n';
+  var lines = '['+imageurl+' '+window.location.href+']\n'  + authors.join(' ') + sub + '\n\n知った経緯\n \n' + select + '\n[#書籍]\n[＊]\n[@]\n';
 
   // URLの形にするためにエンコード
   var body = encodeURIComponent(lines);

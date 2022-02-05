@@ -17,15 +17,14 @@ javascript:(function(){
     sub = ""; // サブタイトルが空のとき（undifined防止）
   }
 
-  // 選択範囲を取得する
-  var select;
-  if (window.getSelection){ // 選択範囲があるとき
-    select = window.getSelection().toString();　// 選択範囲を文字列として取得
-    select = select.replace(/(\W+)( )(\W+)/g,'$1$3'); // 字間に時々紛れている半角スペースを除去
-    select = "\n> " + select.replace(/\n/g,'\n> '); // 行ごとに引用の「>」を付与
-  }else{
-    select = ""; // 選択範囲が空のとき（undifined防止）
-  };
+   // 選択範囲を取得する
+   var select = window.getSelection().toString();　// 選択範囲を文字列として取得
+   if (select){ // 選択範囲があるとき
+     select = select.replace(/(\W+)( )(\W+)/g,'$1$3'); // 字間に時々紛れている半角スペースを除去
+     select = "\n> " + select.replace(/\n/g,'\n> '); // 行ごとに引用の「>」を付与
+   }else{
+     select = ""; // 選択範囲が空のとき（undifined防止）
+   };
 
   // 書影を取得する
   var image=document.getElementById("imgBlkFront");

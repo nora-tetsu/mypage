@@ -15,13 +15,13 @@ javascript:(function(){
         var subttl = document.getElementById("productSubtitle");
         var sub;
         if(subttl) {
-            sub = "\n" + subttl.innerText; // 後のために改行を付与　タグに囲まれたテキスト部分を取得
+            sub = "\n" + subttl.innerText; // 後のために改行を付与 タグに囲まれたテキスト部分を取得
         } else {
             sub = ""; // サブタイトルが空のとき（undifined防止）
         }
 
         // 選択範囲を取得する
-        var select = window.getSelection().toString();　// 選択範囲を文字列として取得
+        var select = window.getSelection().toString(); // 選択範囲を文字列として取得
         if (select){ // 選択範囲があるとき
             select = select.replace(/(\W+)( )(\W+)/g,'$1$3'); // 字間に時々紛れている半角スペースを除去
             select = "\n> " + select.replace(/\n/g,'\n> '); // 行ごとに引用の「>」を付与
@@ -47,21 +47,22 @@ javascript:(function(){
         // 以上の情報を、実際に書き込みたい形に整えてひとつの文字列にまとめる
         var lines = '['+imageurl+' '+window.location.href+']\n'  + authors.join(' ') + sub + '\n\n知った経緯\n \n' + select + '\n[#書籍]\n[＊]\n[@]\n';
 
+        // URLの形にするためにエンコード
+        var body = encodeURIComponent(lines);
+
+        // 自分のプロジェクトのURLとして開いてページを作成（または同名のページに追記）
+        window.open('https://scrapbox.io/noratetsuobj/'+encodeURIComponent(title.trim())+'?body='+body)
+
     }else if(url.includes("https://play.google.com/store/apps/")){
         var appttl = document.querySelectorAll("h1.AHFaub span");
         var title = appttl[0].innerText;
         title = '🎮'+ title;
         var links = ['['+document.title+' '+window.location.href+']'];
         var lines = '\n' + links + '\n\n\n[#スマホゲーム]\n[＊]\n';
+        var body=encodeURIComponent(lines);
+        window.open('https://scrapbox.io/noratetsuobj/'+encodeURIComponent(title.trim())+'?body='+body)
 
     }else{
         alert("このサイトにはまだ対応していません。");
-        return;
     }
-
-    // URLの形にするためにエンコード
-    var body = encodeURIComponent(lines);
-
-    // 自分のプロジェクトのURLとして開いてページを作成（または同名のページに追記）
-    window.open('https://scrapbox.io/noratetsuobj/'+encodeURIComponent(title.trim())+'?body='+body)
 })();

@@ -1,6 +1,16 @@
 javascript:(function(){
     var url = window.location.href;
-    if(url.includes("https://www.amazon.co.jp/")){
+    if(url.includes("https://play.google.com/store/apps/")){
+        var appttl = document.querySelectorAll("h1.AHFaub span");
+        var title = appttl[0].innerText;
+        title = '🎮'+ title;
+        var links = ['['+document.title+' '+window.location.href+']'];
+        var lines = '\n' + links + '\n\n\n[#スマホゲーム]\n[＊]\n';
+        var body=encodeURIComponent(lines);
+        window.open('https://scrapbox.io/noratetsuobj/'+encodeURIComponent(title.trim())+'?body='+body);
+        return
+        
+    } else if(url.includes("https://www.amazon.co.jp/")){
 
         // 書名を取得する
         var ttl = document.getElementById("productTitle");
@@ -51,16 +61,8 @@ javascript:(function(){
         var body = encodeURIComponent(lines);
 
         // 自分のプロジェクトのURLとして開いてページを作成（または同名のページに追記）
-        window.open('https://scrapbox.io/noratetsuobj/'+encodeURIComponent(title.trim())+'?body='+body)
-
-    }else if(url.includes("https://play.google.com/store/apps/")){
-        var appttl = document.querySelectorAll("h1.AHFaub span");
-        var title = appttl[0].innerText;
-        title = '🎮'+ title;
-        var links = ['['+document.title+' '+window.location.href+']'];
-        var lines = '\n' + links + '\n\n\n[#スマホゲーム]\n[＊]\n';
-        var body=encodeURIComponent(lines);
-        window.open('https://scrapbox.io/noratetsuobj/'+encodeURIComponent(title.trim())+'?body='+body)
+        window.open('https://scrapbox.io/noratetsuobj/'+encodeURIComponent(title.trim())+'?body='+body);
+        return
 
     }else{
         alert("このサイトにはまだ対応していません。");

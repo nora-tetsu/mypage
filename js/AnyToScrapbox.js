@@ -1,5 +1,5 @@
 javascript:(function(){
-    var url = window.location.host;
+    var url = window.location.href + "テスト" ;
     if(url.includes("play.google.com")){
         var appttl = document.querySelectorAll("h1.AHFaub span");
         var title = window.prompt('Scrapboxにスクラップします。', appttl[0].innerText.trim());;

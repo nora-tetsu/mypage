@@ -1,15 +1,14 @@
 javascript:(function(){
     var url = window.location.href;
-    if(url.includes("https://play.google.com/store/apps/")){
+    if(url.includes("https://play.google.com/store/apps")){
         var appttl = document.querySelectorAll("h1.AHFaub span");
         var title = appttl[0].innerText;
         title = '🎮'+ title;
-        var links = ['['+document.title+' '+window.location.href+']'];
-        var lines = '\n' + links + '\n\n\n[#スマホゲーム]\n[＊]\n';
-        var body=encodeURIComponent(lines);
+        var link = ['['+document.title+' '+window.location.href+']'];
+        var lines = '\n' + link + '\n\n\n[#スマホゲーム]\n[＊]\n';
+        var body = encodeURIComponent(lines);
         window.open('https://scrapbox.io/noratetsuobj/'+encodeURIComponent(title.trim())+'?body='+body);
         return
-        
     } else if(url.includes("https://www.amazon.co.jp/")){
 
         // 書名を取得する

@@ -1,5 +1,5 @@
 javascript:(function(){
-    var url = window.location.href;
+    var url = window.location.host;
     if(url.includes("play.google.com")){
         var appttl = document.querySelectorAll("h1.AHFaub span");
         var title = window.prompt('Scrapboxにスクラップします。', appttl[0].innerText.trim());;
@@ -9,7 +9,7 @@ javascript:(function(){
         var body = encodeURIComponent(lines);
         window.open('https://scrapbox.io/noratetsuobj/'+encodeURIComponent(title.trim())+'?body='+body);
         return
-    } else if(url.includes("https://www.amazon.co.jp/")){
+    } else if(url.includes("www.amazon.co.jp")){
 
         // 書名を取得する
         var ttl = document.getElementById("productTitle");

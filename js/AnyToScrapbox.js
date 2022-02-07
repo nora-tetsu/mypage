@@ -1,11 +1,11 @@
 javascript:(function(){
     var url = window.location.href;
-    if(url.includes("https://play.google.com/store/apps")){
+    if(url.includes("play.google.com")){
         var appttl = document.querySelectorAll("h1.AHFaub span");
-        var title = appttl[0].innerText;
+        var title = window.prompt('Scrapboxにスクラップします。', appttl[0].innerText.trim());;
         title = '🎮'+ title;
         var link = '['+document.title+' '+window.location.href+']';
-        var lines = '\n' + link + '\n\n\n[#スマホゲーム]\n[＊]\n';
+        var lines = link + '\n\n\n[#スマホゲーム]\n[＊]\n';
         var body = encodeURIComponent(lines);
         window.open('https://scrapbox.io/noratetsuobj/'+encodeURIComponent(title.trim())+'?body='+body);
         return

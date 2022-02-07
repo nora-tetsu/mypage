@@ -4,7 +4,7 @@ javascript:(function(){
         var appttl = document.querySelectorAll("h1.AHFaub span");
         var title = appttl[0].innerText;
         title = '🎮'+ title;
-        var link = ['['+document.title+' '+window.location.href+']'];
+        var link = '['+document.title+' '+window.location.href+']';
         var lines = '\n' + link + '\n\n\n[#スマホゲーム]\n[＊]\n';
         var body = encodeURIComponent(lines);
         window.open('https://scrapbox.io/noratetsuobj/'+encodeURIComponent(title.trim())+'?body='+body);

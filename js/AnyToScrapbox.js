@@ -1,16 +1,7 @@
+// 外部ファイル読み込みが可能なページについて、URLで適用すべきテンプレートを判定してScrapboxに送信する
 javascript:(function(){
-    var url = window.location.href + "テスト" ;
-    if(url.includes("play.google.com")){
-        var appttl = document.querySelectorAll("h1.AHFaub span");
-        var title = window.prompt('Scrapboxにスクラップします。', appttl[0].innerText.trim());;
-        title = '🎮'+ title;
-        var link = '['+document.title+' '+window.location.href+']';
-        var lines = link + '\n\n\n[#スマホゲーム]\n[＊]\n';
-        var body = encodeURIComponent(lines);
-        window.open('https://scrapbox.io/noratetsuobj/'+encodeURIComponent(title.trim())+'?body='+body);
-        return
-    } else if(url.includes("www.amazon.co.jp")){
-
+    var url = window.location.href;
+    if(url.includes("www.amazon.co.jp")){
         // 書名を取得する
         var ttl = document.getElementById("productTitle");
         if (!ttl) var ttl = document.getElementById("ebooksProductTitle");
@@ -54,16 +45,15 @@ javascript:(function(){
         }
 
         // 以上の情報を、実際に書き込みたい形に整えてひとつの文字列にまとめる
-        var lines = '['+imageurl+' '+window.location.href+']\n'  + authors.join(' ') + sub + '\n\n知った経緯\n \n' + select + '\n[#書籍]\n[＊]\n[@]\n';
+        var lines = '['+imageurl+' '+url+']\n'  + authors.join(' ') + sub + '\n\n知った経緯\n \n' + select + '\n[#書籍]\n[＊]\n[@]\n';
 
         // URLの形にするためにエンコード
         var body = encodeURIComponent(lines);
 
         // 自分のプロジェクトのURLとして開いてページを作成（または同名のページに追記）
         window.open('https://scrapbox.io/noratetsuobj/'+encodeURIComponent(title.trim())+'?body='+body);
-        return
 
     }else{
-        alert("このサイトにはまだ対応していません。");
+        alert("このサイトにはまだ対応していません。（外部ファイル読み込み可）");
     }
 })();

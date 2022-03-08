@@ -83,7 +83,7 @@ var ctLikesInPage = 0; //11/10/18 by DW
 	function initLinkblog (callback) {
 		function appendDay (jstruct) {
 			var daytext = "", indentlevel = 0;
-			var dateFormat = "%Y"; // ★defoult: "%A, %B %e, %Y"
+			var dateFormat = "%x"; // ★defoult: "%A, %B %e, %Y"
 			try {dateFormat = pagetable.homePageDateFormat} catch (err) {};
 			var datestring = formatDate (jstruct.when, dateFormat);
 			function add (s) {
@@ -891,7 +891,7 @@ function setupXrefs () {
 								var jstruct = JSON.parse (jsontext), permalinkString = "", htmltext;
 								
 								if (jstruct.created !== undefined) {
-									permalinkString = "<div class=\"divXrefPermalink\"><a href=\"" + xref + "\">" + formatDate (jstruct.created, "%Y") + "</a></div>"; // ★defoult: "%b %e, %Y"
+									permalinkString = "<div class=\"divXrefPermalink\"><a href=\"" + xref + "\">" + formatDate (jstruct.created, "%x") + "</a></div>"; // ★defoult: "%b %e, %Y"
 									}
 								
 								if (jstruct.subs !== undefined) {

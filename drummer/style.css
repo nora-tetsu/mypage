@@ -78,9 +78,9 @@ ul, ol{
         font-size: 40px;
     }
     .divPageBody {
-        width: 100%;
-        margin-left: 10px;
-        margin-right: 10px;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
     }
     .divDayContainer {
         padding: 30px 20px;

@@ -55,6 +55,17 @@
     margin-top: 180px;
     width: 70vw;
 }
+
+ul.ulBulletedSubs {
+    margin-left: 16px !important;
+}
+ul, ol{
+    margin-left: 16px; 
+}
+.ulBulletedSubs li {
+    list-style-type: disc;
+}
+
 .divToggleConnect, .divVersionNumber{
     display: none;
 }

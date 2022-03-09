@@ -3,7 +3,7 @@
     font-family: "UD デジタル 教科書体 NK-B", "MotoyaLMaru W3 mono", "Kosugi Maru", "Roboto",Helvetica,Arial,"Hiragino Sans",sans-serif;
 }
 .divPagetopTitle {
-    font-size: 60px;
+    font-size: 50px;
 }
 .divDayTitle {
     font-size: 24px;
@@ -26,6 +26,38 @@
     margin-bottom: 2px;
 }
 
+.divStoryPageTitle {
+    font-size: 24px;
+    letter-spacing: -1px;
+}
+
+.divTitledItem .divTitle a {
+    text-decoration: none;
+    border: none;
+    cursor: normal;
+    pointer-events: none;
+}
+
+.divPagetopImage {
+    background-image: unset !important;
+    background-color: gray;
+    height: 150px
+    
+}
+.divPagetopText {
+    top: 20px;
+    left: unset;
+    height: 100px;
+    width: 100%;
+    padding: unset;
+}
+.divPageBody {
+    margin-top: 180px;
+    width: 70vw;
+}
+.divToggleConnect, .divVersionNumber{
+    display: none;
+}
 .spTwitterComment, .spPermaLink {
     display: none;
 }

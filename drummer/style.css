@@ -72,3 +72,18 @@ ul, ol{
 .spTwitterComment, .spPermaLink {
     display: none;
 }
+
+@media screen and (max-width: 768px) {
+    .divPagetopTitle {
+        font-size: 40px;
+    }
+    .divPageBody {
+        width: 100%;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .divDayContainer {
+        padding: 30px 20px;
+    }
+}
+

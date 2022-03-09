@@ -1,3 +1,31 @@
+@import url("https://fonts.googleapis.com/css?family=Kosugi+Maru|M+PLUS+Rounded+1c");
+* { 
+    font-family: "UD デジタル 教科書体 NK-B", "MotoyaLMaru W3 mono", "Kosugi Maru", "Roboto",Helvetica,Arial,"Hiragino Sans",sans-serif;
+}
+.divPagetopTitle {
+    font-size: 60px;
+}
+.divDayTitle {
+    font-size: 24px;
+    background-color: gray;
+    padding: 4px;
+}
+.divDayTitle a {
+    color: white;
+    opacity: 1;
+}
+.divTitledItem .divTitle {
+    font-size: 20px;
+    border-left: 4px solid gray;
+    border-bottom: 1px solid gray;
+    padding-left: 5px;
+    margin-bottom: 6px;
+}
+.divTitledItem ul li {
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
 .spTwitterComment, .spPermaLink {
     display: none;
 }

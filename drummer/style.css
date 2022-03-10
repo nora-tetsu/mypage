@@ -55,6 +55,9 @@
     margin-top: 180px;
     width: 70vw;
 }
+.divFooter {
+    margin-top: 0;
+}
 
 ul.ulBulletedSubs {
     margin-left: 16px !important;

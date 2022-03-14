@@ -4,5 +4,5 @@
   - https://nora-tetsu.github.io/mypage/tools/myoutline.html
 - jsファイル
   - https://github.com/nora-tetsu/mypage/blob/main/tools/myoutline.js
-- 操作方法等（ノードの開閉のみ可能のサンプルページ）
+- 操作方法等（ノードの開閉のみ可能の説明用ページ）
   - https://nora-tetsu.github.io/mypage/tools/myoutline_sample.html

@@ -27,8 +27,7 @@ var colordata = JSON.parse(localStorage.getItem('colordata'));
 if(localStorage.hasOwnProperty('Saved-date')) document.getElementById("saveddate").innerText = localStorage.getItem("Saved-date");
 
 if(!localStorage.hasOwnProperty('outlineHTML')) { // 初回のみ発動
-    const data = '<li noid="Nm2eeIs20" draggable="true" class=""><div><i class="focus-icon fa-search-plus" title="フォーカス"></i><i class="node-icon fa-caret-right" title="子項目を開閉"></i><span contenteditable="true">new node</span></div><ul level="node-level-2 " class=""></ul>'
-    localStorage.setItem('outlineHTML', data);
+    localStorage.getItem("outlineHTML") = document.getElementById("content").innerHTML;
 };
 document.getElementById("content").innerHTML = localStorage.getItem("outlineHTML");
 

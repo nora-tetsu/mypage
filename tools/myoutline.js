@@ -9,7 +9,8 @@ var SBlist = [
 
 // 起動時の処理
 if(!localStorage.hasOwnProperty('outlinedata')) { // 初回のみ発動
-    const data = require('https://nora-tetsu.github.io/mypage/tools/outlinedata_sample.json'); 
+    let data; 
+    getFile(data,'https://nora-tetsu.github.io/mypage/tools/outlinedata_sample.json');
     localStorage.setItem('outlinedata', data);
 };
 var outlinedata = JSON.parse(localStorage.getItem('outlinedata'));
@@ -27,7 +28,8 @@ var colordata = JSON.parse(localStorage.getItem('colordata'));
 if(localStorage.hasOwnProperty('Saved-date')) document.getElementById("saveddate").innerText = localStorage.getItem("Saved-date");
 
 if(!localStorage.hasOwnProperty('outlineHTML')) { // 初回のみ発動
-    const data = require('https://nora-tetsu.github.io/mypage/tools/outlineHTML_sample.html'); 
+    let data; 
+    getFile(data,'https://nora-tetsu.github.io/mypage/tools/outlineHTML_sample.html');
     localStorage.setItem('outlineHTML', data);
 };
 document.getElementById("content").innerHTML = localStorage.getItem("outlineHTML");
@@ -44,6 +46,17 @@ SetNodeEvent();
 // 以下function
 
 // イベント追加の類
+// https://uxmilk.jp/46993
+function getFile(data,url) {
+  var req = new XMLHttpRequest();		  // XMLHttpRequest オブジェクトを生成する
+  req.onreadystatechange = function() {		  // XMLHttpRequest オブジェクトの状態が変化した際に呼び出されるイベントハンドラ
+    if(req.readyState == 4 && req.status == 200){ // サーバーからのレスポンスが完了し、かつ、通信が正常に終了した場合
+      data = req.responseText;		          // 取得した JSON ファイルの中身を変数に格納
+    }
+  };
+  req.open("GET", url, false); // HTTPメソッドとアクセスするサーバーの　URL　を指定
+  req.send(null);					    // 実際にサーバーへリクエストを送信
+}
 function SetNodeEvent(){ // アウトライナー機能の追加
     SetDragAndDrop();
     CopyPlain();

@@ -6,27 +6,29 @@ var SBlist = [
     {"name":"Noratetsu's Room","address":"noratetsu"},
     {"name":"Unnamed Camp","address":"unnamedcamp"},
     ]
-
-
-var outlinedata = JSON.parse(localStorage.getItem('outlinedata'));
-console.log("ロードしたデータベースの内容を出力")
-console.log(outlinedata)
-
 var keydata = ["noid","position","attr","text","from","source","note"];
 
-var colordata = JSON.parse(localStorage.getItem('colordata'));
-
-if(localStorage.hasOwnProperty('Saved-date')) document.getElementById("saveddate").innerText = localStorage.getItem("Saved-date");
-
-document.getElementById("content").innerHTML = localStorage.getItem("outlineHTML");
-
+var outlinedata,colordata;
 var sessionsavetimes = 0;
-SessionSave(sessionsavetimes);
+try{
+    var outlinedata = JSON.parse(localStorage.getItem('outlinedata'));
+    console.log("ロードしたデータベースの内容を出力")
+    console.log(outlinedata)
+
+    var colordata = JSON.parse(localStorage.getItem('colordata'));
+    
+    if(localStorage.hasOwnProperty('Saved-date')) document.getElementById("saveddate").innerText = localStorage.getItem("Saved-date");
+    
+    document.getElementById("content").innerHTML = localStorage.getItem("outlineHTML");
+
+    SessionSave(sessionsavetimes);
+    
+    SetNodeEvent();
+}catch(e){}
 
 SetSBProjectList();
 SetEvents();
 SetAttr();
-SetNodeEvent();
 
 
 // 以下function

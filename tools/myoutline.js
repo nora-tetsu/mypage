@@ -26,7 +26,7 @@ var colordata = JSON.parse(localStorage.getItem('colordata'));
 
 if(localStorage.hasOwnProperty('Saved-date')) document.getElementById("saveddate").innerText = localStorage.getItem("Saved-date");
 
-if(!localStorage.hasOwnProperty('outlineHTML')) { // 初回のみ発動
+if(localStorage.getItem("outlineHTML") == null) { // 初回のみ発動
     localStorage.getItem("outlineHTML") = document.getElementById("content").innerHTML;
 };
 document.getElementById("content").innerHTML = localStorage.getItem("outlineHTML");

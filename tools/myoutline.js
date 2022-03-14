@@ -9,7 +9,7 @@ var SBlist = [
 
 // 起動時の処理
 if(!localStorage.hasOwnProperty('outlinedata')) { // 初回のみ発動
-    const data = '[{"noid":"Nm2eeIs20","position":1,"attr":"","text":"new node","from":"","source":"","note":""}];
+    const data = '[{"noid":"Nm2eeIs20","position":1,"attr":"","text":"new node","from":"","source":"","note":""}]';
     localStorage.setItem('outlinedata', data);
 };
 var outlinedata = JSON.parse(localStorage.getItem('outlinedata'));

@@ -20,4 +20,4 @@ document.getElementById("content").innerHTML = '<li noid="Nm2eeIs20" draggable="
 を実行し、
 localStorageの「outlinedata」の値を`[{"noid":"Nm2eeIs20","position":1,"attr":"","text":"new node","from":"","source":"","note":""}]`、  
 「outlineHTML」の値を`<li noid="Nm2eeIs20" draggable="true" class=""><div><i class="focus-icon fa-search-plus" title="フォーカス"></i><i class="node-icon fa-caret-right" title="子項目を開閉"></i><span contenteditable="true">new node</span></div><ul level="node-level-2 " class=""></ul>`  
-にしてリロードで直るか。
+にしてリロードで初期値に戻るか。

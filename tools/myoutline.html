@@ -185,9 +185,11 @@ li [class^="fa-"], .nav li [class^="fa-"], li [class*=" fa-"], .nav li [class*="
 div#attributes {
     position: relative;
     font-size: 12px;
+    overflow: visible;
 }
 input#update-attr {
     position: absolute;
+    margin-top: -10px; 
     right: 10px;
 }
 div#noidlinks {
@@ -299,7 +301,7 @@ ul#content .collapsed-main::before, ul#focus .collapsed-focus::before {
             <h1 class="bg-dark">Focus</h1>
             <div id="noidlinks"></div>
             <details open>
-                <summary style="font-size: 12px;">Details</summary>
+                <summary style="font-size: 12px;"><span style="margin-right:50px;">noid</span><span id="attr-noid"></span></summary>
                 <div id="attributes">
                     <input type="button" name="button" id="update-attr" value="更新">
                 </div>

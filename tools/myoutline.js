@@ -96,7 +96,7 @@ function SetEvents(){ // inputボタン類
 }
 function SetAttr(){ // 詳細欄を構築する（keyが変わっても良いようにHTMLに直接書かずにページ開く都度生成）
     let target = document.getElementById("attributes");
-    for(let i = 0; i < keydata.length; i++){
+    for(let i = 1; i < keydata.length; i++){ // noid部分は別に作成済み
         let attrdiv = document.createElement("div");
         let targetdiv = target.appendChild(attrdiv);
         let attrlabel = document.createElement('span');
@@ -105,7 +105,6 @@ function SetAttr(){ // 詳細欄を構築する（keyが変わっても良いよ
         let attrtxt;
         switch(keydata[i]){
             // 編集不可要素
-            case "noid":
             case "position":
                 attrtxt = document.createElement("span");
                 break;

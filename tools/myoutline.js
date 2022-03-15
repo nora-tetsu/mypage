@@ -41,11 +41,11 @@ function Starting(){
     console.log("ロードしたデータベースの内容を出力")
     console.log(outlinedata)
 
-    if(!localStorage.hasOwnProperty('colordatatest')) { // 初回のみ発動
+    if(!localStorage.hasOwnProperty('colordataDemo')) { // 初回のみ発動
         const data = '[{"name":"薄赤","code":"#ffeaea"},{"name":"薄青","code":"#e4e4ff"},{"name":"薄水","code":"#d6f6ff"},{"name":"薄緑","code":"#d9f3d9"},{"name":"薄黄","code":"#fffde0"},{"name":"薄紫","code":"#f3d9ff"},{"name":"赤","code":"#f01b1b"},{"name":"青","code":"#441bf8"},{"name":"水","code":"#a1ddff"},{"name":"緑","code":"#37b137"},{"name":"黄","code":"#ffff2b"},{"name":"紫","code":"#b11cb1"}]';
-        localStorage.setItem('colordatatest', data);
+        localStorage.setItem('colordataDemo', data);
     };
-    colordata = JSON.parse(localStorage.getItem('colordatatest'));
+    colordata = JSON.parse(localStorage.getItem('colordataDemo'));
 
     if(localStorage.hasOwnProperty('Saved-date')) document.getElementById("saveddate").innerText = localStorage.getItem("Saved-date");
 
@@ -58,6 +58,15 @@ function Starting(){
     SetEvents();
     SetAttr();
     SetNodeEvent();
+}
+
+function DemoReset(){
+    let q = window.confirm("現在のデータを破棄し、サンプルデータを再取得しますか？\n（「OK」でページをリロードします）");
+    if(q==false) return;
+    document.body.removeAttribute("onunload");
+    localStorage.removeItem('outlinedataDemo');
+    localStorage.removeItem('outlineHTMLDemo');
+    location.reload();
 }
 
 
@@ -84,6 +93,7 @@ function SetEvents(){ // inputボタン類
     SetOnclickByID("focus-parent",FocusParentNode);
     SetOnclickByID("focus-to-sb",ConvertFocusToScrapbox);
     SetOnclickByID("focus-to-md",ConvertFocusToMarkdown);
+    SetOnclickByID("demoreset",DemoReset);
 }
 function SetAttr(){ // 詳細欄を構築する（keyが変わっても良いようにHTMLに直接書かずにページ開く都度生成）
     let target = document.getElementById("attributes");

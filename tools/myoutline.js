@@ -3,41 +3,62 @@ var SBproject = "";
 
 // 表示・検索の候補にするScrapboxプロジェクトのリストを作成
 var SBlist = [
-    {"name":"Noratetsu's Room","address":"noratetsu"},
-    {"name":"Unnamed Camp","address":"unnamedcamp"},
-    ]
+{"name":"Noratetsu's Room","address":"noratetsu"},
+{"name":"Unnamed Camp","address":"unnamedcamp"},
+];
+
 
 // 起動時の処理
-if(!localStorage.hasOwnProperty('outlinedata')) { // 初回のみ発動
-    const data = '[{"noid":"Nm2eeIs20","position":1,"attr":"","text":"new node","from":"","source":"","note":""}]';
-    localStorage.setItem('outlinedata', data);
-};
-var outlinedata = JSON.parse(localStorage.getItem('outlinedata'));
-console.log("ロードしたデータベースの内容を出力")
-console.log(outlinedata)
+if(!localStorage.hasOwnProperty('outlinedataDemo') || localStorage.getItem("outlineHTMLDemo") == null){
+    var sampledata = "https://nora-tetsu.github.io/mypage/tools/outlinedata_sample.json";
+    var sampleHTML = "https://nora-tetsu.github.io/mypage/tools/outlineHTML_sample.html";
+    var resultList = [];
+    let processA = fetch(sampledata)
+        .then(response => response.text())
+        .then(data => {
+            localStorage.setItem('outlinedataDemo', data);
+            });;
+    let processB = fetch(sampleHTML)
+        .then(response => response.text())
+        .then(data => {
+            localStorage.setItem('outlineHTMLDemo', data);
+            });;
+    Promise.all([processA, processB])
+        .then(function() {
+            console.log("デモデータが格納されました。");
+            Starting();
+        })
+        .catch(alert);
+}else{
+    Starting();
+}
 
-var keydata = ["noid","position","attr","text","from","source","note"];
+var outlinedata,colordata,keydata,sessionsavetimes;
+function Starting(){
+    keydata = ["noid","position","attr","text","from","source","note"];
 
-if(!localStorage.hasOwnProperty('colordata')) { // 初回のみ発動
-    const data = '[{"name":"薄赤","code":"#ffeaea"},{"name":"薄青","code":"#e4e4ff"},{"name":"薄水","code":"#d6f6ff"},{"name":"薄緑","code":"#d9f3d9"},{"name":"薄黄","code":"#fffde0"},{"name":"薄紫","code":"#f3d9ff"},{"name":"赤","code":"#f01b1b"},{"name":"青","code":"#441bf8"},{"name":"水","code":"#a1ddff"},{"name":"緑","code":"#37b137"},{"name":"黄","code":"#ffff2b"},{"name":"紫","code":"#b11cb1"}]';
-    localStorage.setItem('colordata', data);
-};
-var colordata = JSON.parse(localStorage.getItem('colordata'));
+    outlinedata = JSON.parse(localStorage.getItem('outlinedataDemo'));
+    console.log("ロードしたデータベースの内容を出力")
+    console.log(outlinedata)
 
-if(localStorage.hasOwnProperty('Saved-date')) document.getElementById("saveddate").innerText = localStorage.getItem("Saved-date");
+    if(!localStorage.hasOwnProperty('colordatatest')) { // 初回のみ発動
+        const data = '[{"name":"薄赤","code":"#ffeaea"},{"name":"薄青","code":"#e4e4ff"},{"name":"薄水","code":"#d6f6ff"},{"name":"薄緑","code":"#d9f3d9"},{"name":"薄黄","code":"#fffde0"},{"name":"薄紫","code":"#f3d9ff"},{"name":"赤","code":"#f01b1b"},{"name":"青","code":"#441bf8"},{"name":"水","code":"#a1ddff"},{"name":"緑","code":"#37b137"},{"name":"黄","code":"#ffff2b"},{"name":"紫","code":"#b11cb1"}]';
+        localStorage.setItem('colordatatest', data);
+    };
+    colordata = JSON.parse(localStorage.getItem('colordatatest'));
 
-if(localStorage.getItem("outlineHTML") == null) { // 初回のみ発動
-    localStorage.getItem("outlineHTML") = document.getElementById("content").innerHTML;
-};
-document.getElementById("content").innerHTML = localStorage.getItem("outlineHTML");
+    if(localStorage.hasOwnProperty('Saved-date')) document.getElementById("saveddate").innerText = localStorage.getItem("Saved-date");
 
-var sessionsavetimes = 0;
-SessionSave(sessionsavetimes);
+    document.getElementById("content").innerHTML = localStorage.getItem("outlineHTMLDemo");
 
-SetSBProjectList();
-SetEvents();
-SetAttr();
-SetNodeEvent();
+    sessionsavetimes = 0;
+    SessionSave(sessionsavetimes);
+    
+    SetSBProjectList();
+    SetEvents();
+    SetAttr();
+    SetNodeEvent();
+}
 
 
 // 以下function
@@ -949,15 +970,15 @@ function SaveData(title){
     localStorage.setItem(title,JSON.stringify(outlinedata));
 }
 function AutoSaveHTML(){ // タブリロード時発動
-    SaveHTML("outlineHTML");
-    SaveData("outlinedata");
+    SaveHTML("outlineHTMLDemo");
+    SaveData("outlinedataDemo");
     ClearSessionStorage();
 }
 function ClickSaveHTML(){ // ヘッダーの「保存」ボタンクリックで発動
     let q = window.confirm("現在のデータを保存しますか？");
     if(q==false) return;
-    SaveHTML("Saved-outlineHTML");
-    SaveData("Saved-outlinedata");
+    SaveHTML("Saved-outlineHTMLDemo");
+    SaveData("Saved-outlinedataDemo");
     let date = DateAndTime("yyyy/mm/dd hh:nn")
     localStorage.setItem("Saved-date",date);
     document.getElementById("saveddate").innerText = date;
@@ -966,15 +987,15 @@ function ClickSaveHTML(){ // ヘッダーの「保存」ボタンクリックで
 function ClickLoadData(){ // ヘッダーの「呼出」ボタンクリックで発動
     let q = window.confirm("保存されたデータを呼び出し、現在のデータを上書きしますか？");
     if(q==false) return;
-    document.getElementById("content").innerHTML = localStorage.getItem("Saved-outlineHTML");
-    outlinedata = JSON.parse(localStorage.getItem("Saved-outlinedata"));
+    document.getElementById("content").innerHTML = localStorage.getItem("Saved-outlineHTMLDemo");
+    outlinedata = JSON.parse(localStorage.getItem("Saved-outlinedataDemo"));
     console.log("保存されたデータを呼び出しました。");
     console.log(outlinedata);
     SetNodeEvent();
 }
 function SessionSave(time){ // 引数は回数 起動時とノード移動時に発動
-    let HTMLtitle = "SSave-outlineHTML" + time;
-    let Datatitle = "SSave-outlinedata" + time;
+    let HTMLtitle = "SSave-outlineHTMLDemo" + time;
+    let Datatitle = "SSave-outlinedataDemo" + time;
     sessionStorage.setItem(HTMLtitle,document.getElementById("content").innerHTML);
     sessionStorage.setItem(Datatitle,JSON.stringify(outlinedata));
     sessionsavetimes++;
@@ -982,15 +1003,15 @@ function SessionSave(time){ // 引数は回数 起動時とノード移動時に
     console.log(HTMLtitle + "/" + Datatitle + " にセーブしました。")
 }
 function SessionSaveForUndo(time){ 
-    let HTMLtitle = "SSave-outlineHTML" + time;
-    let Datatitle = "SSave-outlinedata" + time;
+    let HTMLtitle = "SSave-outlineHTMLDemo" + time;
+    let Datatitle = "SSave-outlinedataDemo" + time;
     sessionStorage.setItem(HTMLtitle,document.getElementById("content").innerHTML);
     sessionStorage.setItem(Datatitle,JSON.stringify(outlinedata));
     console.log(HTMLtitle + "/" + Datatitle + " にセーブしました。")
 }
 function LoadSessionSave(num){ // numは何番目のデータか
-    let HTMLtitle = "SSave-outlineHTML" + num;
-    let Datatitle = "SSave-outlinedata" + num;
+    let HTMLtitle = "SSave-outlineHTMLDemo" + num;
+    let Datatitle = "SSave-outlinedataDemo" + num;
     document.getElementById("content").innerHTML = sessionStorage.getItem(HTMLtitle);
     outlinedata = JSON.parse(sessionStorage.getItem(Datatitle));
     SetNodeEvent();
@@ -1017,8 +1038,8 @@ function Redo(){
 
 function ClearSessionStorage(){ // タブリロード時にsessionStorageをクリア
     for(let i = 0; i < 10000; i++){
-        let HTMLtitle = "SSave-outlineHTML" + i;
-        let Datatitle = "SSave-outlinedata" + i;
+        let HTMLtitle = "SSave-outlineHTMLDemo" + i;
+        let Datatitle = "SSave-outlinedataDemo" + i;
         if(sessionStorage.getItem(HTMLtitle) == null) break;
         if(sessionStorage.getItem(Datatitle) == null) break;
         sessionStorage.removeItem(HTMLtitle);

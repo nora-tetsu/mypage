@@ -12,7 +12,6 @@ var SBlist = [
 if(!localStorage.hasOwnProperty('outlinedataDemo') || localStorage.getItem("outlineHTMLDemo") == null){
     var sampledata = "https://nora-tetsu.github.io/mypage/tools/outlinedata_sample.json";
     var sampleHTML = "https://nora-tetsu.github.io/mypage/tools/outlineHTML_sample.html";
-    var resultList = [];
     let processA = fetch(sampledata)
         .then(response => response.text())
         .then(data => {

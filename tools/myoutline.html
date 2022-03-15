@@ -3,9 +3,7 @@
 <meta charset="utf-8">
 <title>Noratetsu's Outline</title>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"/>
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <style>
 /* 背景を青海波にする */
 .bg-light {
@@ -77,8 +75,6 @@ h1 {
 .column{
     position: relative;
     display: block;
-    /* margin:0 10px; */
-    /* flex: 1; */
     height: 100%;
     width: 100%;
     overflow-y: scroll;
@@ -161,17 +157,14 @@ ul {
 
 li {
     width: auto;
-    /*width: calc(100% - 40px);*/
 }
 li span{
-    /*min-height: 20px;*/
     left: 10px;
     width: 100%;
     padding: 1px;
     padding-left: 2px;
 }
 li > div {
-    /*display: block;*/
     position:relative;
     width: calc(100% - 30px);
 }
@@ -246,9 +239,8 @@ li.onfocus{
     color: rgb(160, 60, 253);
 }
 
-.fa-caret-right:before {
-    /* content: "\f0da";*/
-    content: "├";
+.fa-caret-right:before {    
+    content: "├"; /* \f0da */
 }
 .fa-search-plus::before {
     content: "\f00e";

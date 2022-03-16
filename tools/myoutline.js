@@ -84,6 +84,8 @@ function SetNodeEvent(){ // アウトライナー機能の追加
 }
 function SetEvents(){ // inputボタン類
     SetOnclickByID("search-button",clickSearch);
+    SetOnclickByID("sb-open",ScrapboxOpen);
+    SetOnclickByID("sb-search",ScrapboxSearch);
     SetOnclickByID("update-attr",UpdateAttr);
     SetOnclickByID("convert-sb",ConvertAllToScrapbox);
     SetOnclickByID("save-data",ClickSaveHTML);
@@ -1226,4 +1228,17 @@ function JudgeExactMatching(card,words){ // wordsは一次元配列
         tester *= TorF;
     }
     return tester;
+}
+
+function ScrapboxOpen(){
+    let sb_text = document.getElementById("sb-text").value;
+    let sb_project = document.getElementById("sb-select").value;
+    window.open('https://scrapbox.io/'+sb_project+'/'+encodeURIComponent(sb_text.trim()));
+    document.getElementById("sb-text").value = "";
+}
+function ScrapboxSearch(){
+    let sb_text = document.getElementById("sb-text").value;
+    let sb_project = document.getElementById("sb-select").value;
+    window.open('https://scrapbox.io/'+sb_project+'/search/page?q='+encodeURIComponent(sb_text.trim()));
+    document.getElementById("sb-text").value = "";
 }

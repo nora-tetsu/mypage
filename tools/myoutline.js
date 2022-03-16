@@ -316,8 +316,14 @@ function NewNode(e) {
         e.preventDefault(); // 本来の挙動はさせない
         let thisli = this.closest("li"); // liを取得
         let newli = SetNewNode();
-        thisli.after(newli);
-        let newli2 = thisli.nextElementSibling;
+        let newli2;
+        if(e.shiftKey==false){
+            thisli.after(newli);
+            newli2 = thisli.nextElementSibling;
+        }else{
+            thisli.before(newli);
+            newli2 = thisli.previousElementSibling;
+        }
         newli2.querySelector("ul").setAttribute("level",thisli.querySelector("ul").getAttribute("level"));
         SyncBoth(newli2.querySelector("span"));
         newli2.querySelector("span").focus();

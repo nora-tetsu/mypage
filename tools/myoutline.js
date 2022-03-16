@@ -532,7 +532,7 @@ function SpanShortcut(e){
         this.focus();
         console.log("ノード（" + noid + "）を移動しました。");
         SyncBoth(this);
-    }else if(e.which === 40 && e.ctrlKey == true){ // Ctrl+↓で弟項目の下へ
+    }else if(e.which === 40 && (e.ctrlKey == true || e.altKey == true)){ // Ctrl+↓で弟項目の下へ
         e.preventDefault(); // 本来の挙動はさせない
         // 弟項目がなければ何もしない
         if(thisli==thisli.parentNode.lastChild) return;
@@ -541,7 +541,7 @@ function SpanShortcut(e){
         this.focus();
         console.log("ノード（" + noid + "）を移動しました。");
         SyncBoth(this);
-    }else if(e.which === 38 && e.ctrlKey == true){ // Ctrl+↑で兄項目の上へ
+    }else if(e.which === 38 && (e.ctrlKey == true || e.altKey == true)){ // Ctrl+↑で兄項目の上へ
         e.preventDefault(); // 本来の挙動はさせない
         // 兄項目がなければ何もしない
         if(!thisli.previousElementSibling) return;

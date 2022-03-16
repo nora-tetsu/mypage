@@ -1,5 +1,4 @@
-},
-{[{"noid":"Nm2eeIs20","position":2,"attr":"<h1>/薄赤/","text":"操作説明","from":"","source":"","note":""},
+[{"noid":"Nm2eeIs20","position":2,"attr":"<h1>/薄赤/","text":"操作説明","from":"","source":"","note":""},
 {"noid":"Nm2eeKO77","position":"2.1","attr":"<h2>","text":"ヘッダー","from":"","source":"","note":""},
 {"noid":"Nm2eeNm1","position":"2.1.1","attr":"<h3>","text":"検索（β版）","from":"","source":"","note":""},
 {"noid":"Nm2eeNp578","position":"2.1.1.1","attr":"","text":"当てはまるノードまたは当てはまるノードを子項目に含むノード以外を非表示","from":"","source":"","note":""},

@@ -74,10 +74,11 @@ function DemoReset(){
 // イベント追加の類
 function SetNodeEvent(){ // アウトライナー機能の追加
     SetDragAndDrop();
-    CopyPlain();
     AddEventBySelector("main li div span","keydown",NewNode);
     AddEventBySelector("main li div span","keydown",SpanShortcut);
     AddEventBySelector("main li div span","blur",UpdateText);
+    RemoveEventBySelector("main li div span","paste",CopyPlain);
+    AddEventBySelector("main li div span","paste",CopyPlain);
     SetOnclickByClass("node-icon",ToggleExpand);
     SetOnclickByClass("focus-icon",FocusNode);
 }
@@ -150,6 +151,12 @@ function AddEventBySelector(selector,type,f){
     let targets = document.querySelectorAll(selector);
     for(let i = 0; i < targets.length; i++){
         targets[i].addEventListener(type,f);
+    }
+}
+function RemoveEventBySelector(selector,type,f){
+    let targets = document.querySelectorAll(selector);
+    for(let i = 0; i < targets.length; i++){
+        targets[i].removeEventListener(type,f);
     }
 }
 function IndexOfNodeInNodelist(target,select){ // 要素と検索範囲を入れると範囲内のIndexを返す
@@ -465,37 +472,32 @@ function GetLiLevel(li){ // liの階層を取得（文字列から取得する�
 // ホットキー等
 // コピペ時にHTMLタグを貼り付けない
 // https://teratail.com/questions/29072
-function CopyPlain() {
-    let span = document.querySelectorAll("main li div span");
-    for(let i = 0; i < span.length; i++){
-        span[i].addEventListener("paste", function (e) {
-            if(e.shiftKey == true) return;
-            e.preventDefault();
-            var text;
-            if (window.clipboardData) {
-                text = window.clipboardData.getData("text");
-            } else {
-                text = e.clipboardData.getData("text/plain");
-            }
-
-            if (document.selection) {
-                // 〜Internet Explorer 10
-                var range = document.selection.createRange();
-                range.text = text;
-            } else {
-                // Internet Explorer 11/Chrome/Firefox
-                var selection = window.getSelection();
-                var range = selection.getRangeAt(0);
-                var node = document.createTextNode(text);
-                range.insertNode(node);
-                range.setStartAfter(node);
-                range.setEndAfter(node);
-                selection.removeAllRanges();
-                selection.addRange(range);
-            }
-        }, false);
+function CopyPlain(e){
+    if(e.shiftKey == true) return;
+    e.preventDefault();
+    var text;
+    if (window.clipboardData) {
+        text = window.clipboardData.getData("text");
+    } else {
+        text = e.clipboardData.getData("text/plain");
     }
-};
+
+    if (document.selection) {
+        // 〜Internet Explorer 10
+        var range = document.selection.createRange();
+        range.text = text;
+    } else {
+        // Internet Explorer 11/Chrome/Firefox
+        var selection = window.getSelection();
+        var range = selection.getRangeAt(0);
+        var node = document.createTextNode(text);
+        range.insertNode(node);
+        range.setStartAfter(node);
+        range.setEndAfter(node);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    }
+}
 
 // ホットキーを設定
 function SpanShortcut(e){
@@ -679,53 +681,55 @@ function SetDragAndDrop(){
             let ul = li.querySelector("ul");
             this.style.borderTop = '';
             this.style.borderBottom = '';
-            SessionSave(sessionsavetimes);
-            if(targetplace=="focus"){
-                // もしドラッグ先がcontentのフォーカス内なら実行しない
-                if(IndexOfNodeInNodelist(this,".onfocus li div")!=-1) return;
-                let rect = this.getBoundingClientRect();
-                if ((event.clientY - rect.top) < (rect.height / 2)) {
-                    //マウスカーソルの位置が要素の半分より上
-                    li.before(dragelm);
-                } else if((event.clientX - rect.left) > (rect.width / 2)) {
-                    ul.appendChild(dragelm);
-                } else {
-                    //マウスカーソルの位置が要素の半分より下
-                    li.after(dragelm);
+            try{
+                SessionSave(sessionsavetimes);
+                if(targetplace=="focus"){
+                    // もしドラッグ先がcontentのフォーカス内なら実行しない
+                    if(IndexOfNodeInNodelist(this,".onfocus li div")!=-1) return;
+                    let rect = this.getBoundingClientRect();
+                    if ((event.clientY - rect.top) < (rect.height / 2)) {
+                        //マウスカーソルの位置が要素の半分より上
+                        li.before(dragelm);
+                    } else if((event.clientX - rect.left) > (rect.width / 2)) {
+                        ul.appendChild(dragelm);
+                    } else {
+                        //マウスカーソルの位置が要素の半分より下
+                        li.after(dragelm);
+                    }
+                    // focusの変化をcontent（のonfocus内）に反映させる
+                    let noid = document.getElementById("attr-noid").innerText;
+                    document.querySelector('#content [noid="'+noid+'"] > ul').innerHTML = document.getElementById("focus").innerHTML;
+                }else if(targetplace=="content"){
+                    // もしドラッグ元がcontentのフォーカス内且つドラッグ先がfocusなら実行しない
+                    if(IndexOfNodeInNodelist(document.querySelector('[noid="'+targetnoid+'"]'),".onfocus li")!=-1 && IndexOfNodeInNodelist(this,"ul#focus li div")!=-1) return;
+                    let rect = this.getBoundingClientRect();
+                    if ((event.clientY - rect.top) < (rect.height / 2)) {
+                        //マウスカーソルの位置が要素の半分より上
+                        li.before(dragelm);
+                    } else if((event.clientX - rect.left) > (rect.width / 2)) {
+                        ul.appendChild(dragelm);
+                    } else {
+                        //マウスカーソルの位置が要素の半分より下
+                        li.after(dragelm);
+                    }
+                    let attrnoid = document.getElementById("attr-noid")
+                    let noid = attrnoid.innerText;
+                    let contentul = document.querySelector('#content [noid="'+noid+'"] > ul');
+                    let focus = document.getElementById("focus")
+                    if(IndexOfNodeInNodelist(this,"#focus div")!=-1){
+                        // もしドラッグ先がfocusなら結果をcontentに反映する
+                        contentul.innerHTML = focus.innerHTML;
+                    }else if(IndexOfNodeInNodelist(this,"#content .onfocus div")!=-1){
+                        // もしドラッグ先がcontentならfocusをリフレッシュする
+                        focus.innerHTML = contentul.innerHTML;
+                    }
                 }
-                // focusの変化をcontent（のonfocus内）に反映させる
-                let noid = document.getElementById("attr-noid").innerText;
-                document.querySelector('#content [noid="'+noid+'"] > ul').innerHTML = document.getElementById("focus").innerHTML;
-            }else if(targetplace=="content"){
-                // もしドラッグ元がcontentのフォーカス内且つドラッグ先がfocusなら実行しない
-                if(IndexOfNodeInNodelist(document.querySelector('[noid="'+targetnoid+'"]'),".onfocus li")!=-1 && IndexOfNodeInNodelist(this,"ul#focus li div")!=-1) return;
-                let rect = this.getBoundingClientRect();
-                if ((event.clientY - rect.top) < (rect.height / 2)) {
-                    //マウスカーソルの位置が要素の半分より上
-                    li.before(dragelm);
-                } else if((event.clientX - rect.left) > (rect.width / 2)) {
-                    ul.appendChild(dragelm);
-                } else {
-                    //マウスカーソルの位置が要素の半分より下
-                    li.after(dragelm);
-                }
-                let attrnoid = document.getElementById("attr-noid")
-                let noid = attrnoid.innerText;
-                let contentul = document.querySelector('#content [noid="'+noid+'"] > ul');
-                let focus = document.getElementById("focus")
-                if(IndexOfNodeInNodelist(this,"#focus div")!=-1){
-                    // もしドラッグ先がfocusなら結果をcontentに反映する
-                    contentul.innerHTML = focus.innerHTML;
-                }else if(IndexOfNodeInNodelist(this,"#content .onfocus div")!=-1){
-                    // もしドラッグ先がcontentならfocusをリフレッシュする
-                    focus.innerHTML = contentul.innerHTML;
-                }
-            }
-            dragelm.querySelector("div > span").focus();
-            console.log("D&Dでノード（" + targetnoid + "）を移動しました。")
-            FixLevel();
-            UpdatePosition();
-            //SetNodeEvent();
+                dragelm.querySelector("div > span").focus();
+                console.log("D&Dでノード（" + targetnoid + "）を移動しました。")
+                FixLevel();
+                UpdatePosition();
+                //SetNodeEvent();
+            }catch(e){}
         };
     });
 }

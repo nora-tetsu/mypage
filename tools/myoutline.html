@@ -193,9 +193,8 @@ input#update-attr {
     right: 10px;
 }
 div#noidlinks {
-    position: absolute;
-    right: 0;
-    text-align: right;
+    margin-left: 10px;
+    padding-bottom: 6px;
 }
 #column-right details {
     padding-left: 10px;
@@ -299,7 +298,6 @@ ul#content .collapsed-main::before, ul#focus .collapsed-focus::before {
 
         <div class="column" id="column-right">
             <h1 class="bg-dark">Focus</h1>
-            <div id="noidlinks"></div>
             <details open>
                 <summary style="font-size: 12px;"><span style="margin-right:50px;">noid</span><span id="attr-noid"></span></summary>
                 <div id="attributes">
@@ -311,6 +309,7 @@ ul#content .collapsed-main::before, ul#focus .collapsed-focus::before {
                 <input type="button" name="button" id="focus-to-sb" value="ToScrapbox">
                 <input type="button" name="button" id="focus-to-md" value="ToMarkdown">
             </div>
+            <div id="noidlinks"></div>
 
             <ul id="focus"></ul>
 

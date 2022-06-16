@@ -320,3 +320,7 @@ iframe.twitter-tweet-button:not([src*="=https%3A%2F%2Fnoratetsu.blogspot.com%2F2
     padding: 2px;
   }
 }
+
+header + .google-auto-placed{
+    height: 1px !important;
+}

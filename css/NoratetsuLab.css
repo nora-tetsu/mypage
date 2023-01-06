@@ -1,326 +1,360 @@
-@charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Kosugi+Maru|M+PLUS+Rounded+1c");
-@import url("https://use.fontawesome.com/releases/v5.15.1/css/all.css");
+@import"https://fonts.googleapis.com/css?family=Kosugi+Maru|M+PLUS+Rounded+1c";
+@import"https://use.fontawesome.com/releases/v5.15.1/css/all.css";
+
 :root {
-  --column-minus: calc(var(--margin-side) * 2 + 10px);
+    --column-minus: calc(var(--margin-side) * 2 + 10px)
 }
+
 @media screen and (min-width: 1261px) {
-  :root {
-    --margin-side: calc(50vw - 592px);
-  }
+    :root {
+        --margin-side: calc(50vw - 592px)
+    }
 }
-@media screen and (min-width: 992px) and (max-width: 1260px) {
-  :root {
-    --margin-side: 38px;
-  }
+
+@media screen and (min-width: 992px)and (max-width: 1260px) {
+    :root {
+        --margin-side: 38px
+    }
 }
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  :root {
-    --margin-side: 23px;
-  }
+
+@media screen and (min-width: 768px)and (max-width: 991px) {
+    :root {
+        --margin-side: 23px
+    }
 }
+
 @media screen and (max-width: 767px) {
-  :root {
-    --margin-side: 8px;
-  }
+    :root {
+        --margin-side: 8px
+    }
 }
+
 .navbar,
-.fauxcolumn-outer,
-#blog-pager {
-  display: none !important;
+.fauxcolumn-outer {
+    display: none !important
 }
+
 .Header .description,
 .tabs-inner .widget li a,
 .main-outer,
 h2.date-header,
 h3.post-title,
 .comments h4,
-div.widget > h2, div.widget h2.title,
+div.widget>h2,
+div.widget h2.title,
 input {
-  font-family: "UD デジタル 教科書体 NK-R", "Kosugi Maru", 
- "Roboto",Helvetica,Arial,"Hiragino Sans",sans-serif !important;
+    font-family: "UD デジタル 教科書体 NK-R", "Kosugi Maru", "Roboto", Helvetica, Arial, "Hiragino Sans", sans-serif !important
 }
+
 .Header .description,
 .tabs-inner .widget li a,
 .main-outer,
-div.widget > h2, div.widget h2.title {
-  font-size: 110%;
+div.widget>h2,
+div.widget h2.title {
+    font-size: 110%
 }
+
 body {
-  min-width: unset;
-  padding: 0 var(--margin-side) !important;
+    min-width: unset;
+    padding: 0 var(--margin-side) !important
 }
+
 .section {
-  margin: unset;
+    margin: unset
 }
-.content-outer, .content-fauxcolumn-outer, .region-inner {
-  min-width: 100%;
-  max-width: 100%;
-  width: 100%;
+
+.content-outer,
+.content-fauxcolumn-outer,
+.region-inner {
+    min-width: 100%;
+    max-width: 100%;
+    width: 100%
 }
+
 ::-webkit-scrollbar {
-  width: 10px;
+    width: 10px
 }
+
 ::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.4);
-  border: none;
-  border-radius: 10px;
+    background: rgba(255, 255, 255, .4);
+    border: none;
+    border-radius: 10px
 }
+
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+    background: rgba(0, 0, 0, .2);
+    border-radius: 10px;
+    box-shadow: none
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, .4)
 }
+
 header {
-  margin-left: 20px;
+    margin-left: 20px
 }
+
 header .Header h1 {
-  font: normal normal 40px Gruppo !important;
-  text-shadow: 2px 2px 2px gray;
+    font: normal normal 40px Gruppo !important;
+    text-shadow: 2px 2px 2px gray
 }
+
 header .Header .description {
-  font-size: 14px;
+    font-size: 14px
 }
+
 .tabs-inner .widget ul {
-  margin: 0;
+    margin: 0
 }
+
 .tabs-inner .section:first-child ul {
-  margin: 0 auto;
+    margin: 0 auto
 }
-.tabs .widget li a[href^="https://twilog.org/Foam_Crab/"]::before, .tabs .widget li a[href="https://note.com/noratetsu"]::before, .tabs .widget li a[href="https://twitter.com/Foam_Crab"]::before, .tabs .widget li a[href="https://scrapbox.io/noratetsu/"]::before {
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  vertical-align: -3px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-right: 2px;
-  content: '';
-}
-.tabs .widget li a[href^="https://noratetsu.blogspot.com/"] {
-  font-weight: bold;
-}
+
+.tabs .widget li a[href^="https://scrapbox.io/"]::before,
+.tabs .widget li a[href="https://twitter.com/Foam_Crab"]::before,
+.tabs .widget li a[href="https://note.com/noratetsu"]::before,
 .tabs .widget li a[href^="https://twilog.org/Foam_Crab/"]::before {
-  background: url(http://www.google.com/s2/favicons?domain=https://twilog.org/Foam_Crab/asc);
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: -3px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-right: 2px;
+    content: ""
 }
+
+.tabs .widget li {
+    font-weight: bold
+}
+
+.tabs .widget li a[href^="https://twilog.org/Foam_Crab/"]::before {
+    background: url(http://www.google.com/s2/favicons?domain=https://twilog.org/Foam_Crab/asc)
+}
+
 .tabs .widget li a[href="https://note.com/noratetsu"]::before {
-  background: url(http://www.google.com/s2/favicons?domain=https://note.com/);
+    background: url(http://www.google.com/s2/favicons?domain=https://note.com/)
 }
+
 .tabs .widget li a[href="https://twitter.com/Foam_Crab"]::before {
-  background: url(http://www.google.com/s2/favicons?domain=https://twitter.com/);
+    background: url(http://www.google.com/s2/favicons?domain=https://twitter.com/)
 }
-.tabs .widget li a[href="https://scrapbox.io/noratetsu/"]::before {
-  background: url(http://www.google.com/s2/favicons?domain=https://scrapbox.io/);
+
+.tabs .widget li a[href^="https://scrapbox.io/"]::before {
+    background: url(http://www.google.com/s2/favicons?domain=https://scrapbox.io/)
 }
+
 .post-body a:not(:hover) {
-  text-decoration: underline;
-  color: #00899f;
+    text-decoration: underline;
+    color: #00899f
 }
-.post-body a[target="_blank"]::after {
-  font-family: 'Font Awesome 5 Free' !important;
-  content: '\f360';
-  font-weight: 900;
-  font-size: 0.5rem;
-  padding-left: 2px;
-  padding-right: 4px;
-  display: inline-block;
+
+.post-body a[target=_blank]::after {
+    font-family: "Font Awesome 5 Free" !important;
+    content: "";
+    font-weight: 900;
+    font-size: .5rem;
+    padding-left: 2px;
+    padding-right: 4px;
+    display: inline-block
 }
+
 .post-body img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto
 }
+
 @media screen and (max-width: 767px) {
-  .post-body img {
-    max-width: 80%;
-  }
+    .post-body img {
+        max-width: 80%
+    }
 }
+
 .post-labels a,
 .cloud-label-widget-content a {
-  background-color: #eee;
-  border-radius: 10px;
-  padding: 1px 3px;
+    background-color: #eee;
+    border-radius: 10px;
+    padding: 1px 3px
 }
+
 .post-labels a:hover,
 .cloud-label-widget-content a:hover {
-  text-decoration: none;
-  color: unset;
+    text-decoration: none;
+    color: unset
 }
+
 .post-labels a::before,
 .cloud-label-widget-content a::before {
-  font-family: 'Font Awesome 5 Free' !important;
-  content: '\f02b';
-  font-weight: 900;
-  font-size: 0.5rem;
-  padding-left: 2px;
-  padding-right: 1px;
-  display: inline-block;
+    font-family: "Font Awesome 5 Free" !important;
+    content: "";
+    font-weight: 900;
+    font-size: .5rem;
+    padding-left: 2px;
+    padding-right: 1px;
+    display: inline-block
 }
+
 img#Image1_img {
-  max-height: 100px;
-  width: auto;
+    max-height: 100px;
+    width: auto
 }
+
 .comments h4 {
-  font-size: 16px;
+    font-size: 16px
 }
+
 .post-footer {
-  background-color: #fff;
+    background-color: #fff
 }
-.post-footer > div {
-  margin-bottom: 10px;
+
+.post-footer>div {
+    margin-bottom: 10px
 }
+
+.blog-pager {
+    background: none
+}
+
+.home-link {
+    display: none
+}
+
+#blog-pager-newer-link,
+#blog-pager-older-link {
+    max-width: 45%;
+    width: auto
+}
+
 iframe.twitter-tweet-button:not([src*="=https%3A%2F%2Fnoratetsu.blogspot.com%2F20"]) {
-  display: none;
+    display: none
 }
+
 .status-msg-wrap {
-  margin-bottom: 20px;
+    margin-bottom: 20px
 }
+
 .status-msg-body a[href$=".blogspot.com/"],
 .status-msg-hidden a[href$=".blogspot.com/"] {
-  display: none;
+    display: none
 }
+
 .status-msg-body b {
-  color: #00289c;
+    color: #00289c
 }
+
 .status-msg-border {
-  border: unset;
-  opacity: 0.2;
+    border: unset;
+    opacity: .2
 }
+
 .main-inner .columns,
 .main-inner .fauxcolumn-left-outer,
 .main-inner .column-left-outer,
 .main-inner .fauxcolumn-right-outer,
 .main-inner .column-right-outer {
-  width: unset;
-  min-width: unset;
-  padding: unset !important;
-  margin: unset !important;
-  right: unset;
-  left: unset;
+    width: unset;
+    min-width: unset;
+    padding: unset !important;
+    margin: unset !important;
+    right: unset;
+    left: unset
 }
+
 .columns-inner {
-  display: -ms-grid;
-  display: grid;
-  gap: 20px 0;
-  margin: 0 auto;
-  padding: 0;
+    display: grid;
+    gap: 20px 0;
+    margin: 0 auto;
+    padding: 0
 }
+
 .column-center-outer,
 .column-left-outer,
 .column-right-outer {
-  float: unset !important;
-  display: block;
-  width: unset;
-}
-@media screen and (min-width: 992px) {
-  .columns-inner {
-    -ms-grid-columns: 1fr 3fr 1fr;
-        grid-template-columns: 1fr 3fr 1fr;
-  }
-  .column-center-outer {
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
-    grid-column: 2 / 3;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    grid-row: 1 / 2;
-  }
-  .column-left-outer {
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-    grid-column: 1 / 2;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    grid-row: 1 / 2;
-  }
-  .column-right-outer {
-    -ms-grid-column: 3;
-    -ms-grid-column-span: 1;
-    grid-column: 3 / 4;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    grid-row: 1 / 2;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 991px) {
-  .columns-inner {
-    -ms-grid-columns: 1fr 3fr;
-        grid-template-columns: 1fr 3fr;
-  }
-  .column-center-outer {
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
-    grid-column: 2 / 3;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 29;
-    grid-row: 1 / 30;
-  }
-  .column-left-outer {
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-    grid-column: 1 / 2;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    grid-row: 1 / 2;
-  }
-  .column-right-outer {
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-    grid-column: 1 / 2;
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 1;
-    grid-row: 2 / 3;
-  }
-}
-@media screen and (max-width: 767px) {
-  .columns-inner {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-  }
-  .column-center-outer {
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-    grid-column: 1 / 2;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    grid-row: 1 / 2;
-  }
-  .column-left-outer {
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-    grid-column: 1 / 2;
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 1;
-    grid-row: 2 / 3;
-  }
-  .column-right-outer {
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-    grid-column: 1 / 2;
-    -ms-grid-row: 3;
-    -ms-grid-row-span: 1;
-    grid-row: 3 / 4;
-  }
-  .content-inner {
-    padding: 10px 0;
-  }
-  .header-inner .Header .titlewrapper {
-    padding: 10px 0;
-  }
-  .column-left-inner,
-  .column-right-inner {
-    padding: 15px !important;
-  }
-  aside h2 {
-    background-color: #bbbbbb;
-    color: #fff !important;
-    padding: 2px;
-  }
+    float: unset !important;
+    display: block;
+    width: unset
 }
 
-header + .google-auto-placed{
-    height: 1px !important;
+@media screen and (min-width: 992px) {
+    .columns-inner {
+        grid-template-columns: 1fr 3fr 1fr
+    }
+
+    .column-center-outer {
+        grid-column: 2/3;
+        grid-row: 1/2
+    }
+
+    .column-left-outer {
+        grid-column: 1/2;
+        grid-row: 1/2
+    }
+
+    .column-right-outer {
+        grid-column: 3/4;
+        grid-row: 1/2
+    }
+}
+
+@media screen and (min-width: 768px)and (max-width: 991px) {
+    .columns-inner {
+        grid-template-columns: 1fr 3fr
+    }
+
+    .column-center-outer {
+        grid-column: 2/3;
+        grid-row: 1/30
+    }
+
+    .column-left-outer {
+        grid-column: 1/2;
+        grid-row: 1/2
+    }
+
+    .column-right-outer {
+        grid-column: 1/2;
+        grid-row: 2/3
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .columns-inner {
+        grid-template-columns: 1fr
+    }
+
+    .column-center-outer {
+        grid-column: 1/2;
+        grid-row: 1/2
+    }
+
+    .column-left-outer {
+        grid-column: 1/2;
+        grid-row: 2/3
+    }
+
+    .column-right-outer {
+        grid-column: 1/2;
+        grid-row: 3/4
+    }
+
+    .content-inner {
+        padding: 10px 0
+    }
+
+    .header-inner .Header .titlewrapper {
+        padding: 10px 0
+    }
+
+    .column-left-inner,
+    .column-right-inner {
+        padding: 15px !important
+    }
+
+    aside h2 {
+        background-color: #bbb;
+        color: #fff !important;
+        padding: 2px
+    }
 }

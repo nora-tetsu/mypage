@@ -172,6 +172,16 @@ header .Header .description {
     }
 }
 
+.post-body blockquote {
+    box-shadow: 2px 2px 4px #888;
+    margin: 1rem 2rem !important;
+    padding: 10px
+}
+
+.post-body blockquote p {
+    margin: 0
+}
+
 .post-labels a,
 .cloud-label-widget-content a {
     background-color: #eee;

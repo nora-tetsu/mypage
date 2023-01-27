@@ -1,0 +1,31 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta content='width=device-width,initial-scale=1.0,user-scalable=yes' name='viewport'/>
+<title>HyperDatabase</title>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="hyper.css"/>
+</head>
+<body spellcheck="false">
+    <header>
+        <div id="title">HyperDatabase</div>
+        <nav class="buttons">
+            <label title="アウトラインモードに切替"><input type="radio" name="mode" value="outliner" checked>Outline</label>
+            <label title="ボードモードに切替"><input type="radio" name="mode" value="board">Board</label>
+            <label title="データベースモードに切替"><input type="radio" name="mode" value="database">Database</label>
+            <input type="checkbox" id="isTable" title="データベースモードでTable表示に切替">
+            <input class="hidden" type="search" id="filter-category" autocomplete="on" list="categoryList" placeholder="カテゴリフィルター">
+            <input type="search" id="search" autocomplete="on" list="titleList" placeholder="タイトル検索">
+            <datalist id="titleList"></datalist>
+            <datalist id="categoryList"></datalist>
+            <datalist id="optionKeyList"></datalist>
+            <input type="button" name="button" id="save-data" value="保存" title="Ctrl+S" class="hidden">
+        </nav>
+    </header>
+    <main>
+    </main>
+    <footer></footer>
+    <script src="hyper.js" type="module"></script>
+</body>
+</html>

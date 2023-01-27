@@ -1,0 +1,444 @@
+{
+	"notes": [
+		{
+			"noid": "InputOutline",
+			"title": "Input Outline",
+			"text": "",
+			"outline": "<outline text=\"この欄（インプットアウトライン）の役割\" status=\"expanded\" noid=\"n0oe9F51\" data-type=\"none\" data-created=\"2023-01-24T14:32\" data-edited=\"2023-01-24T14:32\"><outline text=\"今日のことでもなくこれという括りも思いついていないアイデアやメモをとりあえず書く場所\" status=\"collapsed\" noid=\"n0oewB165\" data-created=\"2023-01-24T14:33\" data-edited=\"2023-01-24T14:33\"></outline><outline text=\"未来のことをメモしておく場所\" status=\"expanded\" noid=\"n0oeFr690\" data-created=\"2023-01-24T14:41\" data-edited=\"2023-01-24T14:41\"><outline text=\"デイリーアウトラインは未来の日付は表示されないため\" status=\"collapsed\" noid=\"n0oeFe910\" data-created=\"2023-01-24T14:41\" data-edited=\"2023-01-24T14:41\"></outline></outline></outline><outline text=\"インプットアウトラインの実体\" status=\"expanded\" noid=\"n0oeEa127\" data-created=\"2023-01-24T14:40\" data-edited=\"2023-01-24T14:40\"><outline text=\"「Input Outline」というタイトルのデータがあり、そのデータのアウトラインデータをここに表示している\" status=\"collapsed\" noid=\"n0oeEd868\" data-created=\"2023-01-24T14:40\" data-edited=\"2023-01-24T14:40\"></outline></outline><outline text=\"インプットアウトラインの操作\" status=\"expanded\" noid=\"n0oexn485\" data-created=\"2023-01-24T14:33\" data-edited=\"2023-01-24T14:33\"><outline text=\"項目はデイリーアウトラインやメインアウトラインにドラッグアンドドロップで移動できる\" status=\"collapsed\" noid=\"n0oext55\" data-created=\"2023-01-24T14:34\" data-edited=\"2023-01-24T14:39\"></outline></outline><outline text=\"\" status=\"collapsed\" noid=\"n0oeDb207\"></outline><outline text=\"アウトライン全般の操作\" status=\"expanded\" noid=\"n0oeDg839\" data-created=\"2023-01-24T14:39\" data-edited=\"2023-01-24T14:39\"><outline text=\"おおよそ普通のアウトライナーと同じ\" status=\"expanded\" noid=\"n0oeDm512\" data-created=\"2023-01-24T14:39\" data-edited=\"2023-01-24T14:39\"><outline text=\"Enter時\" status=\"expanded\" noid=\"n0oeKs201\" data-created=\"2023-01-24T14:46\" data-edited=\"2023-01-24T14:46\"><outline text=\"Enterのみ：下に項目追加\" status=\"collapsed\" noid=\"n0oeKB972\" data-created=\"2023-01-24T14:46\" data-edited=\"2023-01-24T14:47\"></outline><outline text=\"Enter+Shift：上に項目追加\" status=\"collapsed\" noid=\"n0oeKT640\" data-created=\"2023-01-24T14:47\" data-edited=\"2023-01-24T14:47\"></outline><outline text=\"Enter+Alt：キャレット位置で文字列を分割して下に項目追加\" status=\"collapsed\" noid=\"n0oeL9768\" data-created=\"2023-01-24T14:47\" data-edited=\"2023-01-24T14:48\"></outline></outline><outline text=\"CtrlまたはAlt+↑/↓\" status=\"expanded\" noid=\"n0oeMp471\" data-created=\"2023-01-24T14:48\" data-edited=\"2023-01-24T14:48\"><outline text=\"項目を上下に移動\" status=\"collapsed\" noid=\"n0oeMI12\" data-created=\"2023-01-24T14:48\" data-edited=\"2023-01-24T14:48\"></outline></outline></outline><outline text=\"Ctrl+←/→で項目に属性を付与することができる\" status=\"expanded\" noid=\"n0oeHe932\" data-created=\"2023-01-24T14:43\" data-edited=\"2023-01-24T14:43\"><outline text=\"凡例\" status=\"expanded\" noid=\"n0ogCv507\" data-created=\"2023-01-24T16:38\" data-edited=\"2023-01-24T16:38\"><outline text=\"ToDo\" status=\"collapsed\" noid=\"n0oeHx468\" data-type=\"todo\" data-created=\"2023-01-24T14:43\" data-edited=\"2023-01-24T14:43\"></outline><outline text=\"Done\" status=\"collapsed\" noid=\"n0oeHC626\" data-type=\"done\" data-created=\"2023-01-24T14:43\" data-edited=\"2023-01-24T14:43\"></outline><outline text=\"解決済み\" status=\"collapsed\" noid=\"n0oeHH54\" data-type=\"over\" data-created=\"2023-01-24T14:43\" data-edited=\"2023-01-24T14:43\"></outline><outline text=\"没になった考え\" status=\"collapsed\" noid=\"n0oeHR930\" data-type=\"killed\" data-created=\"2023-01-24T14:44\" data-edited=\"2023-01-24T14:44\"></outline><outline text=\"Credo（自分なりの決め事）\" status=\"collapsed\" noid=\"n0oeIc267\" data-type=\"credo\" data-created=\"2023-01-24T14:45\" data-edited=\"2023-01-24T14:45\"></outline></outline><outline text=\"特定の属性については右カラムに抽出できる\" status=\"collapsed\" noid=\"n0oeJz408\" data-created=\"2023-01-24T14:46\" data-edited=\"2023-01-24T14:46\"></outline><outline text=\"なお属性は予めjs内の配列に書き込んで設定しておく\" status=\"collapsed\" noid=\"n0ogCK989\"></outline></outline><outline text=\"解決できていない問題もある\" status=\"expanded\" noid=\"n0oeDK281\" data-created=\"2023-01-24T14:42\" data-edited=\"2023-01-24T14:42\"><outline text=\"長くなって複数行になった時、上下キーではキャレットを直感的に移動できない（上下の項目にフォーカスが移動してしまう）\" status=\"collapsed\" noid=\"n0oeG1947\" data-created=\"2023-01-24T14:42\" data-edited=\"2023-01-24T14:43\"></outline></outline></outline>",
+			"board": {
+				"relation": [],
+				"card": []
+			},
+			"table": [],
+			"alias": [],
+			"created": "2023-01-24T14:09",
+			"edited": "2023-01-24T16:40",
+			"fixEdited": false,
+			"show": {
+				"text": true,
+				"textType": "Plane",
+				"outline": false,
+				"board": false,
+				"table": false
+			},
+			"category": [
+				"★"
+			],
+			"quiz": [],
+			"isData": false,
+			"data": {},
+			"thumb": ""
+		},
+		{
+			"noid": "2023-01-24",
+			"title": "2023/01/24",
+			"text": "",
+			"outline": "<outline text=\"この欄（デイリーアウトライン）の役割\" status=\"expanded\" noid=\"n0oe9F124\" data-type=\"none\" data-created=\"2023-01-24T14:36\" data-edited=\"2023-01-24T14:36\"><outline text=\"その日にやることやその日起きたことを記述する\" status=\"collapsed\" noid=\"n0oeAS630\" data-created=\"2023-01-24T14:37\" data-edited=\"2023-01-24T14:37\"></outline></outline><outline text=\"デイリーアウトラインの仕組み\" status=\"expanded\" noid=\"n0oeB8985\" data-created=\"2023-01-24T14:37\" data-edited=\"2023-01-24T14:37\"><outline text=\"当日のアウトラインが自動で生成される\" status=\"collapsed\" noid=\"n0oeBe315\" data-created=\"2023-01-24T14:37\" data-edited=\"2023-01-24T14:37\"></outline><outline text=\"日付をクリックするとその日のページを開く\" status=\"collapsed\" noid=\"n0oeOz355\"></outline><outline text=\"デイリーアウトラインには過去十日間分のみ表示される\" status=\"collapsed\" noid=\"n0oeBw395\" data-created=\"2023-01-24T14:37\" data-edited=\"2023-01-24T14:37\"></outline><outline text=\"右上の日付欄を入力するとその日付のページを開く（存在しなければ作成して開く）\" status=\"collapsed\" noid=\"n0oeBL765\" data-created=\"2023-01-24T14:39\" data-edited=\"2023-01-24T14:39\"></outline></outline>",
+			"board": {
+				"relation": [],
+				"card": []
+			},
+			"table": [],
+			"alias": [
+				"2023-01-24",
+				"2023年1月24日"
+			],
+			"created": "2023-01-24T00:00",
+			"edited": "2023-01-24T14:52",
+			"fixEdited": false,
+			"show": {
+				"text": true,
+				"textType": "Plane",
+				"outline": true,
+				"board": false,
+				"table": false
+			},
+			"category": [
+				"Daily"
+			],
+			"quiz": [],
+			"isData": false,
+			"data": {},
+			"thumb": ""
+		},
+		{
+			"noid": "n0oef0925",
+			"title": "メインアウトラインの操作",
+			"text": "本文",
+			"outline": "<outline text=\"この欄にアウトラインを作るには\" status=\"expanded\" noid=\"n0oegn503\" data-created=\"2023-01-24T14:16\" data-edited=\"2023-01-24T14:18\"><outline text=\"↑「新規アウトラインのタイトル」の部分に新規に作るページのタイトルを入力\" status=\"expanded\" noid=\"n0oef0928\" data-type=\"none\" data-created=\"2023-01-24T14:15\" data-edited=\"2023-01-24T14:17\"><outline text=\"「追加」を実行でこの欄に新規ページのアウトラインが生成される\" status=\"collapsed\" noid=\"n0oehh257\" data-edited=\"2023-01-24T14:17\"></outline></outline><outline text=\"または、ページの詳細画面でcategoryに「Hot」を入力する\" status=\"collapsed\" noid=\"n0qlUq575\"></outline></outline><outline text=\"このアウトラインの親ページを開くには\" status=\"expanded\" noid=\"n0oehb267\" data-created=\"2023-01-24T14:18\" data-edited=\"2023-01-24T14:18\"><outline text=\"タイトル（このアウトラインなら「メインアウトラインの操作」の部分）をクリック\" status=\"expanded\" noid=\"n0oehe45\" data-created=\"2023-01-24T14:18\" data-edited=\"2023-01-24T14:29\"><outline text=\"なおデイリーアウトラインとメインアウトラインはタイトルが赤字だと本文に内容があることを示す\" status=\"collapsed\" noid=\"n0qlXD636\"></outline></outline></outline><outline text=\"このアウトラインをメインアウトラインから除去するには\" status=\"expanded\" noid=\"n0oevT489\" data-created=\"2023-01-24T14:32\" data-edited=\"2023-01-24T14:32\"><outline text=\"タイトルを右クリック\" status=\"collapsed\" noid=\"n0oew7225\" data-created=\"2023-01-24T14:32\" data-edited=\"2023-01-24T14:32\"></outline><outline text=\"データが消えることはない\" status=\"collapsed\" noid=\"n0oewb737\"></outline></outline>",
+			"board": {
+				"relation": [],
+				"card": []
+			},
+			"table": [],
+			"alias": [],
+			"created": "2023-01-24T14:15",
+			"edited": "2023-01-26T22:00",
+			"fixEdited": false,
+			"show": {
+				"text": true,
+				"textType": "Plane",
+				"outline": true,
+				"board": false,
+				"table": false
+			},
+			"category": [
+				"説明書",
+				"Hot"
+			],
+			"quiz": [],
+			"isData": false,
+			"data": {},
+			"thumb": ""
+		},
+		{
+			"noid": "n0oeuU352",
+			"title": "この欄（メインアウトライン）の役割",
+			"text": "",
+			"outline": "<outline text=\"今現在注意を向けている事物についてのノートを並べて表示する\" status=\"collapsed\" noid=\"n0oeuU353\" data-type=\"none\" data-created=\"2023-01-24T14:31\" data-edited=\"2023-01-24T14:31\"></outline><outline text=\"他の事物に注意を移す時もただスクロールすればよいので別のページを開き直す必要がない\" status=\"collapsed\" noid=\"n0oevk383\" data-created=\"2023-01-26T21:55\" data-edited=\"2023-01-26T21:55\"></outline>",
+			"board": {
+				"relation": [],
+				"card": []
+			},
+			"table": [],
+			"alias": [],
+			"created": "2023-01-24T14:30",
+			"edited": "2023-01-26T21:56",
+			"fixEdited": false,
+			"show": {
+				"text": true,
+				"textType": "Plane",
+				"outline": true,
+				"board": false,
+				"table": false
+			},
+			"category": [
+				"説明書",
+				"Hot"
+			],
+			"quiz": [],
+			"isData": false,
+			"data": {},
+			"thumb": ""
+		},
+		{
+			"noid": "n0ofkH611",
+			"title": "HyperDatabaseの説明書",
+			"text": "※このツールをリリースしたというわけではないので詳細な解説はしていません。\n\n※入力欄やクリック可能な箇所については大体マウスオーバーで説明が出るようにしてあります。\n\n\n## アウトラインモード\n\n→「Outline」を選択すると表示されるアウトライン群に書いてあります。\n\n## ボードモード\n\n→「Board」を選択して左列の「ボードモードについて」をクリックすると下半分のエリアに表示されます。\n\n## データベースモード\n\n[[ページ詳細画面について]]\n[[データベース化の見本]]（データベース化とクイズモードの説明）\n[[サムネイル画像について]]\n\n---\n\nモードとしては「Outline」「Board」「Database」の三つと説明していますが、実質的には「Outline」「Board」「Database」「Table」「Quiz」の五つのモードになっています。\nしかしモードを切り替えるにあたって、「Outline」「Board」「Database」はラジオボタン選択、「Table」はチェックボックス、「Quiz」はボタン、という統一感がなくてやや気持ち悪い状態になっています。\nこれには一応意味があって、まず全データを俯瞰するものとして「Database」のモードを捉えており、そこに「Table」化のフィルターをかける、あるいは「Quiz」を生成する、と考えています。なので、「Table」化を「オン」にする、「Quiz」化を「実行」する、というイメージからこういう形になっています。\n「Quiz」がタイトル検索を挟んで端にあるのは、これがデータの管理そのものとは関係のないおまけ機能だからです。\n\n---\n\nQ. 複雑すぎませんか？\nA. 特定個人に最適化したシステムは他の人にとっては複雑なものになる（複雑なものに見える）と思います。\n\n",
+			"outline": "<outline text=\"（属性ノード抽出エリアの説明用）\" status=\"expanded\" noid=\"n0qhIw506\" data-created=\"2023-01-26T17:44\" data-edited=\"2023-01-26T17:44\"><outline text=\"↑上部の囲みのエリアはフォーカスしているノードが含まれるページの情報（タイトル、カテゴリ、本文を表示可能）\" status=\"collapsed\" noid=\"n0ogwO765\" data-type=\"todo\" data-created=\"2023-01-24T16:33\" data-edited=\"2023-01-24T16:35\"></outline><outline text=\"この欄（ノード抽出エリア）の役割：全アウトラインデータからToDoなど特定の属性のノードを抽出し確認できるようにする\" status=\"collapsed\" noid=\"n0ogzf746\" data-type=\"todo\" data-created=\"2023-01-24T16:36\" data-edited=\"2023-01-24T16:36\"></outline><outline text=\"今ここに表示されているのはtodo属性を設定してあるノード\" status=\"collapsed\" noid=\"n0qm1972\" data-type=\"todo\"></outline></outline>",
+			"board": {
+				"relation": [],
+				"card": []
+			},
+			"table": [],
+			"alias": [],
+			"created": "2023-01-24T15:20",
+			"edited": "2023-01-27T10:28",
+			"fixEdited": false,
+			"show": {
+				"text": true,
+				"outline": false,
+				"board": false,
+				"table": false,
+				"textType": "Markdown"
+			},
+			"category": [
+				"説明書"
+			],
+			"quiz": [],
+			"isData": false,
+			"data": {},
+			"thumb": ""
+		},
+		{
+			"noid": "n0ofmA19",
+			"title": "ページ詳細画面について",
+			"text": "この部分はデータの本文となるテキストエリアです。\nタイトル右の「編集」ボタンで編集モードと閲覧モードを切り替えます。\n\nここにはプレーンテキストを自由に入力できます。\n画像ファイルをドロップすると画像へのリンクをMarkdown形式で追記した上でGyazoにもアップロードします。アクセスキーが必要なので、試用版ではGyazoアップロード機能はつけていません。\n\n右カラム中央付近の「Plane」「Markdown」「Scrapbox」のラジオボタンで、表示モードにHTML要素をどう構築するかを決められます。\n- 「Plane」では何もせずそのままテキストを表示します。\n- 「Markdown」ではMarkdown記法に則って変換します。\n- 「Scrapbox」ではScrapbox記法にある程度則って変換します。（ただし現時点で実装しているのは一部の記法だけです。）\n\n\nMarkdownモードでは、文字列をダブルブラケットで囲むとリンクになります。\n存在するページのリンク：[[HyperDatabaseの説明書]]\n存在しないページのリンク：[[hogehoge]]\n左列にリンクが作られるほか、閲覧モードでもクリックできるようになります。\n\nScrapboxモードでは、文字列をシングルブラケットで囲むとリンクになります。\n\nPlaneモードではブラケットで囲んでもリンクにはなりません。\n\n\n右カラムにある「Quiz」や「データベース化」については[[データベース化の見本]]のページに書いてあります。",
+			"outline": "",
+			"board": {
+				"relation": [],
+				"card": []
+			},
+			"table": [],
+			"alias": [],
+			"created": "2023-01-24T15:22",
+			"edited": "2023-01-26T22:15",
+			"fixEdited": false,
+			"show": {
+				"text": true,
+				"outline": false,
+				"board": false,
+				"table": false,
+				"textType": "Markdown"
+			},
+			"category": [
+				"説明書"
+			],
+			"quiz": [],
+			"isData": false,
+			"data": {},
+			"thumb": ""
+		},
+		{
+			"noid": "n0ogEW19",
+			"title": "ボードモードについて",
+			"text": "",
+			"outline": "",
+			"board": {
+				"relation": [
+					"InputOutline"
+				],
+				"card": [
+					{
+						"noid": "n0ogF2833",
+						"top": 22,
+						"left": 411,
+						"text": "ボードモードの役割",
+						"type": ""
+					},
+					{
+						"noid": "n0ogGA391",
+						"top": 19,
+						"left": 11,
+						"text": "関連ノートについて",
+						"type": ""
+					},
+					{
+						"noid": "n0ohHL805",
+						"top": 178,
+						"left": 8,
+						"text": "ボードエリアについて",
+						"type": ""
+					},
+					{
+						"noid": "n0ohIe231",
+						"top": 209,
+						"left": 42,
+						"text": "Ctrl+ドラッグアンドドロップで項目を移動",
+						"type": ""
+					},
+					{
+						"noid": "n0ohLp485",
+						"top": 50,
+						"left": 455,
+						"text": "構造ができていないメモ・アイデアを整理する",
+						"type": ""
+					},
+					{
+						"noid": "n0ohLT378",
+						"top": 96,
+						"left": 455,
+						"text": "他のページと情報を横断して考えや情報をまとめる",
+						"type": ""
+					},
+					{
+						"noid": "n0ohMh892",
+						"top": 51,
+						"left": 37,
+						"text": "他のページのアウトラインデータを表示する",
+						"type": ""
+					},
+					{
+						"noid": "n0ohNq233",
+						"top": 97,
+						"left": 40,
+						"text": "表示を変えており平面的に見れるようにしている",
+						"type": ""
+					},
+					{
+						"noid": "n0ohO8898",
+						"top": 185,
+						"left": 415,
+						"text": "まだ未完成",
+						"type": ""
+					},
+					{
+						"noid": "n0ohOs40",
+						"top": 213,
+						"left": 456,
+						"text": "現時点でそんなに使っていないので、今後使っていく中で改良していく",
+						"type": ""
+					},
+					{
+						"noid": "n0ohQf119",
+						"top": -40,
+						"left": 292,
+						"text": "↑関連ノートエリア　　　↓ボードエリア",
+						"type": ""
+					},
+					{
+						"noid": "n0ohRw971",
+						"top": -41,
+						"left": -166,
+						"text": "ボードデータがあるページの一覧",
+						"type": ""
+					}
+				]
+			},
+			"table": [],
+			"alias": [],
+			"created": "2023-01-24T16:40",
+			"edited": "2023-01-26T17:48",
+			"fixEdited": false,
+			"show": {
+				"text": true,
+				"outline": false,
+				"board": true,
+				"table": false,
+				"textType": "Markdown"
+			},
+			"category": [
+				"説明書"
+			],
+			"quiz": [],
+			"isData": false,
+			"data": {},
+			"thumb": ""
+		},
+		{
+			"noid": "n0oi47700",
+			"title": "織田信長",
+			"text": "データベースモードの見本用データです。\n\n\n右の「データベース化」のチェックを入れ、「type」キーを設定して種別とするもの（この例では「人物」）を入力すると、テーブルビューで取得できるようになる。\n\nテーブルビューでは、まず「＋」ボタンで列を追加し、表示させたい項目名をタイトル行に手動で入力する必要がある。\n\n\n---\n\nクイズモードについて。\n\n右上の削除ボタン隣の「Quiz」をチェックすると、中央付近（「データベース化」の上）に一問一答の入力欄が生成される。\n「Q.」「A.」をマウスオーバーでショートカットのガイドを表示。\n\nQuizデータは最上部のタイトル検索欄隣の「Quiz」ボタンをクリックで表示されるクイズモードで確認できる。\n\nクイズモードに並んでいるカードの挙動\n- マウスオーバーで答えを表示＆そのクイズデータがあるページの本文をツールチップで表示\n- クリックで解答日時を更新（「○日以上経過のみ出題」でフィルタリングするため）\n- 右クリックで詳細画面\n\n",
+			"outline": "",
+			"board": {
+				"relation": [],
+				"card": []
+			},
+			"table": [],
+			"alias": [
+				"おだ のぶなが",
+				"データベース化の見本"
+			],
+			"created": "2023-01-24T18:04",
+			"edited": "2023-01-26T22:15",
+			"fixEdited": false,
+			"show": {
+				"text": true,
+				"outline": false,
+				"board": false,
+				"table": false,
+				"textType": "Markdown"
+			},
+			"category": [
+				"日本史"
+			],
+			"quiz": [
+				{
+					"noid": "n0qgJV563",
+					"question": "本能寺の変が起きたのはいつですか。",
+					"anser": "天正10年6月2日（1582年6月21日）の早朝",
+					"firstAnser": "2023-01-26T17:38",
+					"lastAnser": "2023-01-26T17:38"
+				}
+			],
+			"isData": true,
+			"data": {
+				"type": [
+					"人物"
+				],
+				"生年月日": [
+					"1534年",
+					"天文3年"
+				],
+				"死亡日": [
+					"1582年",
+					"天正10年"
+				],
+				"出生地": [
+					"尾張国（愛知県）"
+				]
+			},
+			"thumb": ""
+		},
+		{
+			"noid": "n0oiew934",
+			"title": "ナポレオン・ボナパルト",
+			"text": "",
+			"outline": "",
+			"board": {
+				"relation": [],
+				"card": []
+			},
+			"table": [],
+			"alias": [],
+			"created": "2023-01-24T18:14",
+			"edited": "2023-01-24T18:16",
+			"fixEdited": false,
+			"show": {
+				"text": true,
+				"outline": false,
+				"board": false,
+				"table": false,
+				"textType": "Plane"
+			},
+			"category": [
+				"世界史"
+			],
+			"quiz": [],
+			"isData": true,
+			"data": {
+				"type": [
+					"人物"
+				],
+				"生年月日": [
+					"1769年",
+					"8月",
+					"15日"
+				],
+				"死亡日": [
+					"1821年",
+					"5月",
+					"5日"
+				],
+				"出生地": [
+					"コルシカ島（フランス領）"
+				]
+			},
+			"thumb": ""
+		},
+		{
+			"noid": "n0raon595",
+			"title": "サムネイル画像について",
+			"text": "本文内の最初の画像がサムネイルとして扱われ、カードビューで表示されます。（Scrapboxと同様です。）\n\nカードビューでサムネイル画像を表示するかどうかはカードビュー右上の「Thumbnail」ボタンで切り替えられます。\n\n![kani](https://gyazo.com/78e601db549b7f6b4587298060c1ef1c/raw)",
+			"outline": "",
+			"board": {
+				"relation": [],
+				"card": []
+			},
+			"table": [],
+			"alias": [],
+			"created": "2023-01-27T10:24",
+			"edited": "2023-01-27T10:28",
+			"fixEdited": false,
+			"show": {
+				"text": true,
+				"outline": false,
+				"board": false,
+				"table": false,
+				"textType": "Markdown"
+			},
+			"category": [
+				"説明書"
+			],
+			"quiz": [],
+			"isData": false,
+			"data": {},
+			"thumb": "https://gyazo.com/78e601db549b7f6b4587298060c1ef1c/raw"
+		}
+	],
+	"config": {
+		"openedCategory": "説明書",
+		"database": [
+			{
+				"type": "人物",
+				"head": [
+					"生年月日",
+					"死亡日",
+					"出生地"
+				]
+			}
+		],
+		"showThumbnail": "on",
+		"showText": "on"
+	}
+}

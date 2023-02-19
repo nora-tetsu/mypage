@@ -170,6 +170,7 @@ header .Header .description {
   background-color: #444;
   color: #fff;
   border-radius: 5px
+  white-space: unset;
 }
 
 .post-labels a, .cloud-label-widget-content a {

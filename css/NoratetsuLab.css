@@ -288,7 +288,7 @@ iframe.twitter-tweet-button:not([src*="=https%3A%2F%2Fnoratetsu.blogspot.com%2F2
     max-width: 48vw
   }
   .post-body pre {
-    calc(45vw - 20px - 4rem);
+    max-width: calc(45vw - 20px - 4rem);
   }
 }
 
@@ -312,7 +312,7 @@ iframe.twitter-tweet-button:not([src*="=https%3A%2F%2Fnoratetsu.blogspot.com%2F2
     max-width: 60vw
   }
   .post-body pre {
-    calc(60vw - 20px - 4rem);
+    max-width: calc(60vw - 20px - 4rem);
   }
 }
 
@@ -336,7 +336,7 @@ iframe.twitter-tweet-button:not([src*="=https%3A%2F%2Fnoratetsu.blogspot.com%2F2
     max-width: 92vw
   }
   .post-body pre {
-    calc(94vw - 20px - 4rem);
+    max-width: calc(94vw - 20px - 4rem);
   }
   .content-inner {
     padding: 10px 0

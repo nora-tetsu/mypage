@@ -170,7 +170,8 @@ header .Header .description {
   background-color: #444;
   color: #fff;
   border-radius: 5px;
-  white-space: pre-wrap;
+  white-space: pre;
+  overflow-x: auto;
 }
 
 .post-labels a, .cloud-label-widget-content a {
@@ -286,6 +287,9 @@ iframe.twitter-tweet-button:not([src*="=https%3A%2F%2Fnoratetsu.blogspot.com%2F2
   .gist {
     max-width: 48vw
   }
+  .post-body pre {
+    calc(45vw - 20px - 4rem);
+  }
 }
 
 @media screen and (min-width: 768px)and (max-width: 991px) {
@@ -307,6 +311,9 @@ iframe.twitter-tweet-button:not([src*="=https%3A%2F%2Fnoratetsu.blogspot.com%2F2
   .gist {
     max-width: 60vw
   }
+  .post-body pre {
+    calc(60vw - 20px - 4rem);
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -327,6 +334,9 @@ iframe.twitter-tweet-button:not([src*="=https%3A%2F%2Fnoratetsu.blogspot.com%2F2
   }
   .gist {
     max-width: 92vw
+  }
+  .post-body pre {
+    calc(94vw - 20px - 4rem);
   }
   .content-inner {
     padding: 10px 0

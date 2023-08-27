@@ -1,6 +1,7 @@
 @import url("https://use.fontawesome.com/releases/v5.15.1/css/all.css");
 
 /* 青海波文様設定 */
+/*
 .DocumentContainer,
 .Pane-content {
     --color-A: #f8f8f4;
@@ -31,6 +32,7 @@
         radial-gradient(circle at 0 50%, var(--color-A) 5%, var(--color-B) 5%, var(--color-B) 15%, var(--color-A) 15%, var(--color-A) 20%, var(--color-B) 20%, var(--color-B) 29%, var(--color-A) 29%, var(--color-A) 34%, var(--color-B) 34%, var(--color-B) 44%, var(--color-A) 44%, var(--color-A) 49%, transparent 49%, transparent) !important;
     background-size: 128px 64px !important;
 }
+*/
 
 .Node.is-currentRoot {
     background-color: #fff;
@@ -98,14 +100,14 @@
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
+/*
 .Node.is-currentRoot>.Node-children {
     max-height: 70vh;
     overflow-y: auto;
     width: 100%;
     padding-left: 44px;
-    /* overflowによって各項目メニューが見えなくなることへの対処 */
 }
-
+*/
 .Document {
     margin-bottom: 0px !important;
     width: 100vw;
@@ -131,6 +133,28 @@
     display: none;
 }
 
+.node-backlink-counter {
+    .Node.is-currentRoot>.Node-self & {
+        top: 0;
+    }
+}
+
+.node-hover {
+    .Node.is-currentRoot>.Node-self & {
+        height: 20px;
+    }
+
+    &.has-backlink-count {
+        margin-left: -100px;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/*
 .Node-children .node-backlink-counter {
     display: none;
 }
@@ -188,7 +212,7 @@
         box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.4);
     }
 }
-
+*/
 .flat-search-breadcrumb {
     border-top: solid 1px gray;
     padding-top: 4px;

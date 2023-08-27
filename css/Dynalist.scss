@@ -1,0 +1,502 @@
+/* 2022/10/09時点 */
+@import url("https://use.fontawesome.com/releases/v5.15.1/css/all.css");
+
+/* 青海波文様設定 */
+.DocumentContainer, .Pane-content {
+    --color-A: #f8f8f4;
+    --color-B: #f4f4f0;
+}
+.Pane-header, .AppHeader {
+    --color-A: #646E78;
+    --color-B: #505564;
+    color: #fff !important;
+}
+.AppHeader-icon, .Pane-headerToolbarItem {
+    color: #fff !important;
+}
+.DocumentContainer, .Pane-content, .Pane-header, .AppHeader {
+    background-image:
+      radial-gradient(circle at 100% 150%, var(--color-B) 24%, var(--color-A) 24%, var(--color-A) 28%, var(--color-B) 28%, var(--color-B) 36%, var(--color-A) 36%, var(--color-A) 40%, transparent 40%, transparent),
+      radial-gradient(circle at 0    150%, var(--color-B) 24%, var(--color-A) 24%, var(--color-A) 28%, var(--color-B) 28%, var(--color-B) 36%, var(--color-A) 36%, var(--color-A) 40%, transparent 40%, transparent),
+      radial-gradient(circle at 50%  100%, var(--color-A) 10%, var(--color-B) 10%, var(--color-B) 23%, var(--color-A) 23%, var(--color-A) 30%, var(--color-B) 30%, var(--color-B) 43%, var(--color-A) 43%, var(--color-A) 50%, var(--color-B) 50%, var(--color-B) 63%, var(--color-A) 63%, var(--color-A) 71%, transparent 71%, transparent),
+      radial-gradient(circle at 100% 50%, var(--color-A) 5%, var(--color-B) 5%, var(--color-B) 15%, var(--color-A) 15%, var(--color-A) 20%, var(--color-B) 20%, var(--color-B) 29%, var(--color-A) 29%, var(--color-A) 34%, var(--color-B) 34%, var(--color-B) 44%, var(--color-A) 44%, var(--color-A) 49%, transparent 49%, transparent),
+      radial-gradient(circle at 0    50%,var(--color-A) 5%, var(--color-B) 5%, var(--color-B) 15%, var(--color-A) 15%, var(--color-A) 20%, var(--color-B) 20%, var(--color-B) 29%, var(--color-A) 29%, var(--color-A) 34%, var(--color-B) 34%, var(--color-B) 44%, var(--color-A) 44%, var(--color-A) 49%, transparent 49%, transparent) !important;
+    background-size: 128px 64px !important;
+}
+.Node.is-currentRoot {
+    background-color: #fff;
+    padding: 10px;
+}
+
+/* フォント */
+* {
+    font-family: "UD デジタル 教科書体 NK-R", "MotoyaLMaru W3 mono","Roboto",Helvetica,Arial,"Hiragino Sans",sans-serif;
+}
+.katex .mathdefault, .mop:not(.op-symbol.small-op), .mop:not(.op-symbol.small-op) span:not(.op-symbol.small-op), .mord {
+    font-family: KaTeX_Math,"IPA明朝" !important;
+}
+.is-smallFont .Node-contentContainer {
+    font-size: 0.8rem !important;
+}
+.is-smallFont .node-line {
+    line-height: 16px !important;
+    min-height: 16px !important;
+}
+.is-smallFont .Node-self.is-heading {
+    font-size: 1rem !important;
+}
+.Document-rootNode.u-use-pref-font > div > div.Node-self.is-noteEmpty.is-parent.is-hidingNote.is-contentRendered.is-noteRendered > div.node-line.Node-contentContainer > div.Node-renderedContent.node-line > span {
+    font-size: initial !important;
+}
+.node-inline-item, 
+.is-smallFont .Node-contentContainer .node-inline-code {
+    font-size: 14px !important;
+}
+
+/* メインエディタ関連 */
+.Node.is-currentRoot, .DocumentTools-overlay {
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+}
+.Node.is-currentRoot > .Node-children {
+    max-height: 70vh;
+    overflow-y: auto;
+    width: 100%;
+    padding-left: 44px; /* overflowによって各項目メニューが見えなくなることへの対処 */
+}
+.Document {
+    margin-bottom: 0px !important;
+    width: 100vw;
+    padding: 0 20px;
+}
+.is-desktop .Document-rootNode {
+    padding: 0 20px; 
+}
+/* 
+.Node.is-currentRoot {
+    padding-bottom: 30px;
+}
+*/
+.CurrentLineHighlight {
+    background: none;
+}
+.DocumentBreadcrumb {
+    padding-top: 10px;
+    min-height: 30px;
+    overflow-x: auto;
+}
+/*
+.Document::before {
+    content: '前進： NLab更新 / Kindle本読む / 交換日記更新 / 語学勉強 / 小説執筆\A維持： 新聞切り抜き / ツイートまとめ / 食卓メモ整理 / 数学・統計・経済学';
+    white-space: pre-wrap;
+    position: fixed;
+    top: 6px;
+    margin-left: 20px;
+    font-size: 0.8rem;
+}
+*/
+
+/* 下部およびバックリンク関連 */
+.Document-bottomSpace {
+    display: none;
+}
+.Node-children  .node-backlink-counter {
+    display: none;
+}
+/* 
+.Node-children .node-line-strict.has-backlink-count {
+    margin-left: 0;
+}
+*/
+.Node-children .node-line-strict.has-backlink-count .node-icon {
+    left: 44px;
+}
+.Node.is-currentRoot > .Node-self .node-backlink-counter {
+    top: 2px;
+    left: 24px;
+    display: none;
+}
+.Node.is-currentRoot > .Node-self.is-parent .node-backlink-counter {
+    display: block;
+    position: fixed;
+    top: unset;
+    bottom: 12px;
+    left: calc(20vw - 80px);
+}
+.is-desktop .document-backlinks-container {
+    margin: 10px 40px;
+    padding: 0 10px;
+    max-height: 60vh;
+    overflow-y: auto;
+    display: block;
+    position: fixed;
+    max-width: 50vw;
+    width: 55vw;
+    bottom: 10px;
+}
+.document-backlinks-container:not(:hover) .search-ui-summary,
+.document-backlinks-container:not(:hover) .search-ui-results {
+    display: none;
+}
+.document-backlinks-container:not(:hover) {
+    border-top-width: 3px;
+}
+.document-backlinks-container:hover {
+    display: block;
+    position: fixed;
+    z-index: 100;
+    bottom: 0;
+    width: 76%;
+    background-color: #fff;
+    border-top: unset;
+    box-shadow: 0px 0px 4px rgba(0,0,0,0.4);
+}
+.flat-search-breadcrumb {
+    border-top: solid 1px gray;
+    padding-top: 4px;
+    background-color: rgba(0,0,0,0.05);
+}
+.flat-search-breadcrumb-item {
+    font-size: 70%;    
+}
+
+/* Headingにborder設定
+.is-smallFont .Node-self.is-heading1 .Node-contentContainer span,
+.is-smallFont .Node-self.is-heading1 .Node-contentContainer :focus-visible {
+    border: 2px solid #ed6d3d;
+}
+
+.is-smallFont .Node-self.is-heading2 .Node-contentContainer span,
+.is-smallFont .Node-self.is-heading2 .Node-contentContainer :focus-visible {
+    border: 2px solid #6495ED;
+}
+.is-smallFont .Node-self.is-heading3 .Node-contentContainer span,
+.is-smallFont .Node-self.is-heading3 .Node-contentContainer :focus-visible {
+    border: 1px solid #7CC28E;
+} */
+
+/* 各ノードにborderをつけてカード風にする
+.is-smallFont .Node-self .Node-contentContainer {
+    border: 1px solid #bbb;
+    padding: 4px;
+    padding-left: 7px;
+    width: 94%;
+}
+ */
+
+ /* Font Awesome準備 */
+.is-smallFont .Node-self .Node-contentContainer .node-line::before,
+.is-smallFont .Node-self .Node-contentContainer span::before,
+.is-smallFont .Node-self .Node-contentContainer span::after,
+.is-smallFont .Node-self .Node-contentContainer :focus-visible::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 0.8rem;
+    margin-left: -12px;
+    margin-right: 2px;
+}
+
+/* Headingにアイコン設定 */
+.Node-self.is-heading1 .Node-contentContainer .node-line::before,
+.Node-self.is-heading1 .Node-contentContainer :focus-visible::before {
+    content: ' \f3c5';
+    color: #ed6d3d;
+}
+.Node-self.is-heading2 .Node-contentContainer .node-line::before,
+.Node-self.is-heading2 .Node-contentContainer :focus-visible::before {
+    content: ' \f3c5';
+    color: #6495ED;
+}
+.Node-self.is-heading3 .Node-contentContainer .node-line::before,
+.Node-self.is-heading3 .Node-contentContainer :focus-visible::before {
+    content: ' \f3c5';
+    color: #7CC28E;
+}
+
+/* Color設定変更 */
+.has-color {
+    width: calc(100% - 34px);
+}
+.mod-color-label-1 {
+    background-color: unset !important;
+    color: rgb(226,69,69);
+    font-weight: bold;
+}
+.mod-color-label-1 span:first-child::before {
+    content: ' \f06a';
+    color: rgb(226,69,69);
+}
+.mod-color-label-2 {
+    background-color: unset !important;
+    border: #7CC28E dashed 1px;
+    padding: 2px;
+}
+.mod-color-label-2 span:first-child::before {
+    content: '\f46c';
+    color: #7CC28E;
+    font-size: 0.7rem !important;
+    padding-left: 11px;
+    vertical-align: 1px;
+}
+.mod-color-label-3 { /* 2021-11-12追加 */
+    background-color: #444 !important;
+    color: #fff;
+    border-radius: 0;
+    padding: 3px;
+    margin: -3px 0;
+}
+.mod-color-label-4 {
+    background-color: unset !important;
+    color: #7CC28E;
+    font-weight: bold;
+}
+.mod-color-label-4 span:first-child::before {
+    content: ' \f0a4';
+    color: #7CC28E;
+}
+.mod-color-label-5 {
+    background-color: #6495ED0A !important;
+    border: 1px solid #6495ED;
+    padding: 4px;
+}
+.mod-color-label-5 span:first-child::before {
+    content: ' \f10d';
+    color: #6495ED;
+    font-size: 0.5rem !important;
+    padding-left: 9px;
+}
+.mod-color-label-5 span:last-child::after {
+    content: ' \f10e';
+    color: #6495ED;
+    font-size: 0.5rem !important;
+    padding-left: 9px;
+}
+.mod-color-label-6 {
+    background-color: unset !important;
+    color: #7967c3;
+}
+.mod-color-label-6 span:first-child::before {
+    content: ' \f05a';
+    color: #7967c3;
+}
+span.node-highlight span::before,
+span.node-highlight span::after {
+    display: none !important;
+}
+
+/* バレット調整 *//* 2021-11-07 */
+.Node-bullet:before {
+    font-size: 12px;
+    color: rgba(0,0,0,0.1);
+    content: '┠';
+}
+.is-parent.is-collapsed .Node-bullet:before {
+    content: '▶' !important;
+}
+
+/* ページリンク */
+.node-inline-item:before {
+    display: none;
+}
+.node-inline-item {
+    display: inline;
+    border: unset;
+    background-color: unset;
+    color: #384d98;
+    font-weight: bold;
+    margin-left: -1.9px;
+    text-overflow: unset !important;
+    white-space: normal !important;
+}
+.node-inline-item:not(.node-inline-image)::after {
+   font-family: 'Font Awesome 5 Free';
+   content: ' \f3e5';
+   font-weight: 900;
+   font-size: 0.6rem;
+   padding-right: 4px;
+   margin-left: 0px;
+   display: inline-block;
+}
+.node-inline-image::after {
+   font-family: 'Font Awesome 5 Free';
+   content: ' \f03e';
+   font-weight: 900;
+   font-size: 0.8rem;
+   padding-right: 4px;
+   margin-left: -6px;
+   display: inline-block;
+}
+
+/* 外部リンク */
+.node-line a:not(.node-tag):not([href^="https://dynalist.io"]) {
+    color: #be1e3e;
+}
+.node-line a:not(.node-tag):not([href^="https://dynalist.io"])::after {
+   font-family: 'Font Awesome 5 Free';
+   content: ' \f360';
+   font-weight: 900;
+   font-size: 0.6rem;
+   padding-right: 5px;
+   margin-left: -4px;
+}
+.node-line a:not(.node-tag)[href^="https://twitter.com/"] {
+    color: #6495ED;
+}
+.node-line a:not(.node-tag)[href^="https://twitter.com/"]::after {
+   content: ' \f4ba';
+   margin-left: -5px;
+}
+
+/* タグ */
+.node-tag {
+    text-decoration-line: none;
+    color: #4B4;
+}
+.node-tag::after {
+   font-family: 'Font Awesome 5 Free';
+   content: ' \f02c';
+   font-weight: 900;
+   font-size: 0.6rem;
+   margin-left: -4px;
+   display: inline-block;
+}
+.node-tag[title*="@20"] {
+    text-decoration-line: none;
+    color: #8344bb;
+}
+.node-tag[title*="@20"]::after {
+    content: '';
+    margin-right: 2px;
+}
+
+/* フォルダ・ファイル一覧 */
+.DocumentItem-icon:before,
+.FolderItem-icon:before {
+    display: none;
+}
+.pane-item-icon {
+    display: none;
+}
+.pane-item-header {
+    font-size: 14px;
+    padding: 0 26px;
+}
+.FolderItem-header {
+    color: #995d1f;
+    font-weight: bold; 
+}
+.FolderItem-header:not(.is-collapsed)::after {
+   font-family: 'Font Awesome 5 Free';
+   content: ' \f07c';
+   font-weight: 900;
+   font-size: 0.8rem;
+   margin-left: 3px;
+   display: inline-block;
+}
+.FolderItem-header.is-collapsed::after {
+   font-family: 'Font Awesome 5 Free';
+   content: ' \f07b';
+   font-weight: 900;
+   font-size: 0.8rem;
+   margin-left: 3px;
+   display: inline-block;
+}
+.pane-item-header.is-archived::after {
+   font-family: 'Font Awesome 5 Free';
+   content: ' \f187';
+   font-weight: 900;
+   font-size: 0.6rem;
+   vertical-align: 1px;
+   margin-left: 2px;
+   display: inline-block;
+}
+
+/* Headerにホットキーのメモ表示 */
+.header-sync-state::before {
+    content: '最上部へ：Ctrl+Home　最下部へ：Ctrl+End　下位項目の開閉：Ctrl+Shift+.';
+    display: block;
+    margin-right: 20px;
+    color: #fff;
+    position: fixed;
+    text-align: right;
+    top: 0;
+    right: 150px;
+    margin-top: 5px;
+}
+
+.LeftPaneSplitter:hover::after {
+    display: block;
+    content: 'J tags\A#Start\A#デジタル整理\A#NLab更新\A#新聞チェック\A#掃除\A#庭仕事\A#松に水やり\A#習字\A#庭の様子\A#昆虫\A#SS投稿\A#体調\A#生理\A#映像作品視聴\A#模様替え\A#古紙回収\A#灯油\A';
+    white-space: pre;
+    font-size: 14px;
+    background-color: #fff;
+    width: auto;
+    max-width: 50vw;
+    height: auto;
+    max-height: 90vh;
+    overflow: auto;
+    bottom: 30px;
+    padding: 10px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+}
+
+/* 縮小表示時の設定 */
+@media screen and (max-width: 768px) {
+    .Node.is-currentRoot {
+        width: 91vw;
+        margin-left: -50px;
+    }
+    .Node-children {
+        padding-left: 6px;   
+    }
+    .Node-bullet:before {
+        margin-left: 4px;
+    }
+    .node-icon {
+        padding: 0;
+    }
+    .Node-self {
+        padding-left: 80px;
+    }
+    .is-currentRoot > .is-parent {
+        padding-left: 100px
+    }
+    .header-sync-state::before {
+        display: none;
+    }
+}
+
+/*
+.Node:not(.is-currentRoot) > .Node-children {
+    outline: 1px dashed #dddb;
+    max-height: 40vh;
+    overflow-y: auto;
+    background-color: #cde2;
+}
+*/
+
+/* 2023/02/04追加 */
+.Node-renderedNote {
+    color: #bbb;
+    font-size: 11px
+}
+.Node-renderedNote:before {
+    content: '🖋 '
+}
+
+/* 2023/06/28追加 */
+.DocumentTools {
+    top: -34px;
+    right: 38px;
+}
+.is-desktop .AppHeader {
+    height: 26px;
+}
+.AppHeader-syncStatus {
+    top: 2px;
+    bottom: unset;
+    overflow-y: hidden;
+}
+.AppHeader-icon {
+    font-size: 16px;
+    top: 1px;
+}

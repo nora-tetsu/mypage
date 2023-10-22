@@ -205,7 +205,21 @@ header .Header .description {
     background-color: #444;
     color: #fff;
     border-radius: 5px;
-    white-space: unset;
+    white-space: pre;
+    overflow-x: auto;
+    max-width: calc(45vw - 20px - 4rem);
+}
+
+@media screen and (max-width: 767px) {
+    .post-body pre {
+        max-width: calc(94vw - 20px - 4rem);
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .post-body pre {
+        max-width: calc(60vw - 20px - 4rem);
+    }
 }
 
 .post-labels a,

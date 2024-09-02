@@ -112,7 +112,7 @@ function isMatch(node: NodeData, condition: Partial<NodeData>, or = false) {
     return or ? result.some(bool => bool === true) : result.every(bool => bool === true);
 }
 
-class DynalistNode {
+export class DynalistNode {
     data: NodeData;
     private doc: DynalistDocument;
     shouldBeIgnored: boolean; // 無効な項目でないか

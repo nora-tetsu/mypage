@@ -6,10 +6,13 @@ import type { NodeData } from "./DynalistClient.ts";
 
 export class DynalistDocument {
     nodes: DynalistNode[] = [];
+    static async getNodes(token: string, fileId: string) {
+        const client = new DynalistClient(token);
+        return await client.doc.read(fileId);
+    }
     static async build(token: string, fileId: string, childrenGetCondition?: Partial<NodeData>) {
         const instance = new DynalistDocument();
-        const client = new DynalistClient(token);
-        const nodes = await client.doc.read(fileId);
+        const nodes = await this.getNodes(token, fileId);
         instance.nodes = nodes.map(node => new DynalistNode(node, instance, childrenGetCondition));
         return instance;
     }
@@ -154,7 +157,7 @@ export class DynalistNode {
     }
     get children() {
         const others = this.doc.nodes;
-        if(!this.data.children) return [];
+        if (!this.data.children) return [];
         return this.data.children.map(id => others.find(node => node.data.id === id)) as DynalistNode[];
     }
     findChildByContent(condition: string, type: 'starts' | 'ends' | 'includes' = 'starts') {
@@ -189,13 +192,13 @@ export class DynalistNode {
             return;
         }
     }
-    matchDescendants(condition:Partial<NodeData>){
+    matchDescendants(condition: Partial<NodeData>) {
         const result: DynalistNode[] = [];
         roop(this);
         return result;
 
-        function roop(parent:DynalistNode){
-            if(isMatch(parent.data,condition)) result.push(parent);
+        function roop(parent: DynalistNode) {
+            if (isMatch(parent.data, condition)) result.push(parent);
             parent.children.forEach(node => roop(node));
             return;
         }

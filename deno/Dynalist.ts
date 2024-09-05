@@ -276,6 +276,7 @@ export class DynalistNode {
                         c = `    ${indent[0]}${c}`;
                     }
                 }
+                child.content = c;
                 roop(obj);
             });
 
